@@ -1,0 +1,15 @@
+[package]
+name = "leptos-bulma"
+description = "A Leptos component library based on Bulma CSS framework."
+version = "0.0.0-alpha.1"
+edition = "2021"
+authors = ["Javier E. <jaedns@gmail.com>"]
+license-file = "LICENSE"
+readme = "README.md"
+repository = "https://github.com/javierEd/leptos-bulma.git"
+categories = ["gui"]
+keywords = ["components", "leptos", "ui", "web"]
+exclude = ["bulma.jpg", "CHANGELOG.md"]
+
+[dependencies]
+leptos = "0.5.7"
