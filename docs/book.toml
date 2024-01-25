@@ -1,0 +1,9 @@
+[book]
+title = "Leptos Bulma Book"
+authors = ["Javier E. <jaedns@gmail.com"]
+language = "en"
+
+[output.html]
+git-repository-url = "https://github.com/javierEd/leptos-bulma/tree/main/docs"
+edit-url-template = "https://github.com/javierEd/leptos-bulma/tree/main/docs/{path}"
+site-url = "/leptos-bulma/"

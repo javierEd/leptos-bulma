@@ -9,7 +9,7 @@ readme = "README.md"
 repository = "https://github.com/javierEd/leptos-bulma.git"
 categories = ["gui"]
 keywords = ["components", "leptos", "ui", "web"]
-exclude = ["bulma.jpg", "CHANGELOG.md"]
+exclude = ["bulma.jpg", "CHANGELOG.md", "docs"]
 
 [dependencies]
 leptos = "0.5"

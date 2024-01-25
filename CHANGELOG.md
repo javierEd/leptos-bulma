@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- Official book
+
 ### Changed
 
 - Allow older versions of Leptos 0.5.x
