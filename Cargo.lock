@@ -709,7 +709,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-bulma"
-version = "0.0.0-alpha.1"
+version = "0.0.0-alpha.2"
 dependencies = [
  "leptos",
  "leptos-use",

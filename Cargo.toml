@@ -1,7 +1,7 @@
 [package]
 name = "leptos-bulma"
 description = "A Leptos component library based on Bulma CSS framework."
-version = "0.0.0-alpha.1"
+version = "0.0.0-alpha.2"
 edition = "2021"
 authors = ["Javier E. <jaedns@gmail.com>"]
 license-file = "LICENSE"
