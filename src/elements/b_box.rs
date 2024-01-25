@@ -1,8 +1,6 @@
 use leptos::*;
 
 #[component]
-pub fn BBox(children: Children) -> impl IntoView {
-    view! {
-        <div class="box">{children()}</div>
-    }
+pub fn BBox(children: Children, #[prop(default = "")] class: &'static str) -> impl IntoView {
+    view! { <div class=format!("box {}", class)>{children()}</div> }
 }

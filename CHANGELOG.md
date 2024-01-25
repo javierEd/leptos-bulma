@@ -4,7 +4,11 @@
 
 ### Added
 
-- Official book
+- Build and deploy book with mdBook and GitHub Actions.
+- More Navbar Leptos components.
+- Modal Leptos components.
+- Class argument to Box Leptos component.
+- leptosfmt.toml file.
 
 ### Changed
 

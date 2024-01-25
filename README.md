@@ -2,6 +2,13 @@
 
 A [Leptos](https://leptos.dev) component library based on [Bulma](https://bulma.io) CSS framework.
 
+[![crates.io](https://img.shields.io/crates/v/leptos-bulma.svg)](https://crates.io/crates/leptos-bulma)
+[![docs.rs](https://docs.rs/leptos-bulma/badge.svg)](https://docs.rs/leptos-bulma)
+
+[Book](https://javiered.github.io/leptos-bulma) |
+[Crates.io](https://crates.io/crates/leptos-bulma) |
+[Docs.rs](https://docs.rs/leptos-bulma)
+
 <p align="center">
     <img src="https://raw.githubusercontent.com/javierEd/leptos-bulma/main/bulma.jpg"/>
 </p>
