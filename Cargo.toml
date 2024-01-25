@@ -12,4 +12,4 @@ keywords = ["components", "leptos", "ui", "web"]
 exclude = ["bulma.jpg", "CHANGELOG.md"]
 
 [dependencies]
-leptos = "0.5.7"
+leptos = "0.5"
