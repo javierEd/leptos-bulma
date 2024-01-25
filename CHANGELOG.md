@@ -1,10 +1,24 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+- Custom style.css for the book.
+
+### Fixed
+
+- Modal code example in the book.
+
+### Removed
+
+- Style in the book iframes.
+
 ## [0.0.0-alpha.2] - 2024-01-25
 
 ### Added
 
-- Build and deploy book with mdBook and GitHub Actions.
+- Build and deploy the book with mdBook and GitHub Actions.
 - More Navbar Leptos components.
 - Modal Leptos components.
 - Class argument to Box Leptos component.

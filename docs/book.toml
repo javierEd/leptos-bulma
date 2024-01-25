@@ -7,3 +7,4 @@ language = "en"
 git-repository-url = "https://github.com/javierEd/leptos-bulma/tree/main/docs"
 edit-url-template = "https://github.com/javierEd/leptos-bulma/tree/main/docs/{path}"
 site-url = "/leptos-bulma/"
+additional-css = ["style.css"]
