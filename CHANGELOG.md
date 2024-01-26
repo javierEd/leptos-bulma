@@ -8,11 +8,14 @@
 
 ### Fixed
 
+- Exclude .editorconfig and leptosfmt.toml files from `cargo publish`.
+- Exclude Cargo.lock file from git repository and `cargo publish`.
 - Modal code example in the book.
 
 ### Removed
 
-- Style in the book iframes.
+- Styles from the book iframes.
+- Cargo.lock file.
 
 ## [0.0.0-alpha.2] - 2024-01-25
 

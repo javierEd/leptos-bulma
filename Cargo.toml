@@ -9,8 +9,14 @@ readme = "README.md"
 repository = "https://github.com/javierEd/leptos-bulma.git"
 categories = ["gui"]
 keywords = ["components", "leptos", "ui", "web"]
-exclude = ["bulma.jpg", "CHANGELOG.md", "docs"]
+exclude = [
+    ".editorconfig",
+    "bulma.jpg",
+    "CHANGELOG.md",
+    "docs",
+    "leptosfmt.toml",
+]
 
 [dependencies]
 leptos = "0.5"
-leptos-use = "0.9.0"
+leptos-use = "0.9"
