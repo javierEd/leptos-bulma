@@ -1,5 +1,8 @@
-use leptos::html::A;
+use leptos::ev;
+use leptos::html::{Div, A};
 use leptos::*;
+
+use crate::MouseEventFn;
 
 #[component]
 pub fn BNavbar(children: Children, #[prop(default = "")] class: &'static str) -> impl IntoView {
@@ -37,6 +40,11 @@ pub fn BNavbarBurger(
 }
 
 #[component]
+pub fn BNavbarDivider() -> impl IntoView {
+    view! { <hr class="navbar-divider"/> }
+}
+
+#[component]
 pub fn BNavbarEnd(children: Children) -> impl IntoView {
     view! { <div class="navbar-end">{children()}</div> }
 }
@@ -46,11 +54,46 @@ pub fn BNavbarItem(
     children: Children,
     #[prop(default = "")] class: &'static str,
     #[prop(optional)] href: Option<&'static str>,
-) -> impl IntoView {
+    #[prop(optional, into)] on_click: Option<MouseEventFn>,
+) -> impl IntoView
+where
+{
     view! {
         <a class=format!("navbar-item {}", class) href=href>
             {children()}
         </a>
+    }
+    .optional_event(ev::click, on_click.map(MouseEventFn::into_inner))
+}
+
+#[component]
+pub fn BNavbarItemDropdown<F, IV>(
+    children: Children,
+    #[prop(default = "")] dropdown_class: &'static str,
+    trigger: F,
+) -> impl IntoView
+where
+    F: Fn() -> IV,
+    IV: IntoView,
+{
+    let node_ref = create_node_ref::<Div>();
+    let (is_active, set_is_active) = create_signal(false);
+
+    let _ = leptos_use::on_click_outside(node_ref, move |_| {
+        set_is_active.set(false);
+    });
+
+    view! {
+        <div
+            node_ref=node_ref
+            class="navbar-item has-dropdown"
+            class:is-active=is_active
+            on:click=move |_| { set_is_active.update(|v| *v = !*v) }
+        >
+            <a class="navbar-link">{trigger()}</a>
+
+            <div class=format!("navbar-dropdown {}", dropdown_class)>{children()}</div>
+        </div>
     }
 }
 

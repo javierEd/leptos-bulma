@@ -26,8 +26,18 @@ pub fn MyNavbar() -> impl IntoView {
                 <BNavbarStart>
                     <BNavbarItem>"Item"</BNavbarItem>
                 </BNavbarStart>
+
                 <BNavbarEnd>
                     <BNavbarItem>"Item"</BNavbarItem>
+
+                    <BNavbarItemDropdown
+                        dropdown_class="is-right"
+                        trigger=|| view! { <span class="has-text-weight-bold">"Dropdown item"</span> }
+                    >
+                        <BNavbarItem>"Item"</BNavbarItem>
+                        <BNavbarDivider />
+                        <BNavbarItem>"Item"</BNavbarItem>
+                    </BNavbarItemDropdown>
                 </BNavbarEnd>
             </BNavbarMenu>
         </BNavbar>

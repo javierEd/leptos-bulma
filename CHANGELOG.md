@@ -5,6 +5,7 @@
 ### Added
 
 - Custom style.css for the book.
+- Navbar dropdown.
 
 ### Fixed
 
