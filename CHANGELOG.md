@@ -5,7 +5,8 @@
 ### Added
 
 - Custom style.css for the book.
-- Navbar dropdown.
+- Navbar dropdown Leptos components.
+- Dropdown Leptos components.
 
 ### Fixed
 

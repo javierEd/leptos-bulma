@@ -5,7 +5,8 @@ Example:
 ```rust
 use leptos::*;
 use leptos_bulma::components::{
-  BNavbar, BNavbarEnd, BNavbarBrand, BNavbarBurger, BNavbarItem, BNavbarMenu, BNavbarStart
+    BNavbar, BNavbarBrand, BNavbarBurger, BNavbarDivider, BNavbarEnd, BNavbarItem,
+    BNavbarItemDropdown, BNavbarMenu, BNavbarStart,
 };
 
 #[component]
