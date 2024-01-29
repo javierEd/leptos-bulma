@@ -10,3 +10,7 @@
   - [Dropdown](components/dropdown.md)
   - [Modal](components/modal.md)
   - [Navbar](components/navbar.md)
+- [Form](form/README.md)
+  - [Input](form/input.md)
+  - [Select](form/select.md)
+  - [Textarea](form/textarea.md)

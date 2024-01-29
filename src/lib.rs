@@ -2,6 +2,7 @@ use leptos::ev::MouseEvent;
 
 pub mod components;
 pub mod elements;
+pub mod form;
 
 pub struct MouseEventFn(Box<dyn Fn(MouseEvent) + 'static>);
 

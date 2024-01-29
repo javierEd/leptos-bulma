@@ -13,9 +13,27 @@ A [Leptos](https://leptos.dev) component library based on [Bulma](https://bulma.
     <img src="https://raw.githubusercontent.com/javierEd/leptos-bulma/main/bulma.jpg"/>
 </p>
 
-## THIS CRATE IS STILL A BABY!
+## THIS LIBRARY IS STILL A WORK IN PROGRESS!
 
 And any suggestions are appreciated.
+
+## What is mostly ready?
+
+### Elements
+
+- [x] Box
+
+### Components
+
+- [x] Dropdown
+- [x] Modal
+- [x] Navbar
+
+### Form
+
+- [x] Input
+- [x] Select
+- [x] Textarea
 
 ## How to install
 

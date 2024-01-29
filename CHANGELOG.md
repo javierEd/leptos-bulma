@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+- Some Leptos components for forms (Input, Select and Textarea).
+
 ## [0.0.0-alpha.3] - 2024-01-26
 
 ### Added
