@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+- Button Leptos component.
+
 ## [0.0.0-alpha.4] - 2024-01-29
 
 ### Added

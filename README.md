@@ -22,6 +22,7 @@ And any suggestions are appreciated.
 ### Elements
 
 - [x] Box
+- [x] Button
 
 ### Components
 

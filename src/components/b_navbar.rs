@@ -15,14 +15,11 @@ pub fn BNavbarBrand(children: Children) -> impl IntoView {
 }
 
 #[component]
-pub fn BNavbarBurger(
-    is_active: ReadSignal<bool>,
-    set_is_active: WriteSignal<bool>,
-) -> impl IntoView {
+pub fn BNavbarBurger(is_active: RwSignal<bool>) -> impl IntoView {
     let burger_ref = create_node_ref::<A>();
 
     let _ = leptos_use::on_click_outside(burger_ref, move |_| {
-        set_is_active.set(false);
+        is_active.set(false);
     });
 
     view! {
@@ -30,7 +27,7 @@ pub fn BNavbarBurger(
             node_ref=burger_ref
             class="navbar-burger"
             class:is-active=is_active
-            on:click=move |_| { set_is_active.update(|v| *v = !*v) }
+            on:click=move |_| { is_active.update(|v| *v = !*v) }
         >
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -100,7 +97,7 @@ where
 #[component]
 pub fn BNavbarMenu(
     children: Children,
-    #[prop(optional)] is_active: Option<ReadSignal<bool>>,
+    #[prop(optional, into)] is_active: Option<MaybeSignal<bool>>,
 ) -> impl IntoView {
     view! {
         <div class="navbar-menu" class:is-active=move || is_active.map(|v| v.get()) == Some(true)>
