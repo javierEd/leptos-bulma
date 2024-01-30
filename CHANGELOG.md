@@ -7,6 +7,10 @@
 - Button Leptos component.
 - Notification Leptos component.
 
+### Changed
+
+- Use Show Leptos component to toggle modal.
+
 ## [0.0.0-alpha.4] - 2024-01-29
 
 ### Added

@@ -3,17 +3,19 @@ use leptos::*;
 
 #[component]
 pub fn BModal(
-    children: Children,
+    children: ChildrenFn,
     #[prop(default = true)] has_background: bool,
-    is_active: ReadSignal<bool>,
+    is_active: RwSignal<bool>,
 ) -> impl IntoView {
     view! {
-        <div class="modal" class:is-active=is_active>
-            <Show when=move || has_background>
-                <div class="modal-background"></div>
-            </Show>
-            {children()}
-        </div>
+        <Show when=move || is_active.get()>
+            <div class="modal is-active">
+                <Show when=move || has_background>
+                    <div class="modal-background"></div>
+                </Show>
+                {children()}
+            </div>
+        </Show>
     }
 }
 
