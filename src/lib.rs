@@ -1,5 +1,6 @@
 use leptos::ev::MouseEvent;
 
+pub mod columns;
 pub mod components;
 pub mod elements;
 pub mod form;
