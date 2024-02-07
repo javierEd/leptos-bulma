@@ -9,7 +9,7 @@ pub fn BPasswordField(
     #[prop(optional)] label: Option<&'static str>,
     #[prop(optional)] name: Option<&'static str>,
     #[prop(optional)] placeholder: Option<&'static str>,
-    #[prop(optional)] value: Option<&'static str>,
+    #[prop(optional, into)] value: MaybeSignal<String>,
 ) -> impl IntoView {
     let error_text = create_rw_signal(None);
     let is_visible = create_rw_signal(false);

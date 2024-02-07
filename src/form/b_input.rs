@@ -7,7 +7,7 @@ pub fn BInput(
     #[prop(default = "text")] input_type: &'static str,
     #[prop(optional)] name: Option<&'static str>,
     #[prop(optional)] placeholder: Option<&'static str>,
-    #[prop(optional)] value: Option<&'static str>,
+    #[prop(optional, into)] value: MaybeSignal<String>,
     #[prop(attrs, optional)] attributes: Vec<(&'static str, Attribute)>,
 ) -> impl IntoView {
     let mut b_input = view! {

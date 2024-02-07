@@ -13,6 +13,10 @@
 
 - Use Show Leptos component to toggle modal.
 
+### Fixed
+
+- Form field values.
+
 ## [0.0.0-alpha.4] - 2024-01-29
 
 ### Added

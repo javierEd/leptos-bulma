@@ -9,7 +9,7 @@ pub fn BTextareaField(
     #[prop(optional)] label: Option<&'static str>,
     #[prop(optional)] name: Option<&'static str>,
     #[prop(optional)] placeholder: Option<&'static str>,
-    #[prop(optional)] value: Option<&'static str>,
+    #[prop(optional, into)] value: MaybeSignal<String>,
 ) -> impl IntoView {
     let error_text = create_rw_signal(None);
 
@@ -39,9 +39,7 @@ pub fn BTextareaField(
             </Show>
 
             <BControl class="is-expanded">
-                <textarea class=textarea_class id=id name=name placeholder=placeholder>
-                    {value}
-                </textarea>
+                <textarea class=textarea_class id=id name=name placeholder=placeholder prop:value=value />
             </BControl>
 
             <Show when=has_error>

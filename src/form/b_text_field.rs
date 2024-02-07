@@ -10,7 +10,7 @@ pub fn BTextField(
     #[prop(optional)] label: Option<&'static str>,
     #[prop(optional)] name: Option<&'static str>,
     #[prop(optional)] placeholder: Option<&'static str>,
-    #[prop(optional)] value: Option<&'static str>,
+    #[prop(optional, into)] value: MaybeSignal<String>,
 ) -> impl IntoView {
     let error_text = create_rw_signal(None);
 
@@ -40,7 +40,7 @@ pub fn BTextField(
             </Show>
 
             <BControl class="is-expanded">
-                <input class=input_class id=id ype=input_type name=name placeholder=placeholder value=value/>
+                <input class=input_class id=id type=input_type name=name placeholder=placeholder value=value/>
             </BControl>
 
             <Show when=has_error>
