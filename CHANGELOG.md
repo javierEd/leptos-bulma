@@ -7,6 +7,7 @@
 - Button Leptos component.
 - Notification Leptos component.
 - Columns Leptos components.
+- Menu Leptos components.
 
 ### Changed
 
