@@ -11,6 +11,7 @@
 
 ### Changed
 
+- Upgrade dependencies.
 - Use Show Leptos component to toggle modal.
 
 ### Fixed

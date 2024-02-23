@@ -18,5 +18,9 @@ exclude = [
 ]
 
 [dependencies]
-leptos = "0.5"
-leptos-use = "0.9"
+leptos = "0.6"
+leptos_router = "0.6"
+leptos-use = "0.10"
+
+[features]
+ssr = ["leptos-use/ssr"]
