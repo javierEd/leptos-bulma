@@ -10,7 +10,7 @@ pub fn BColumns(children: Children, #[prop(default = "")] class: &'static str) -
 #[component]
 pub fn BColumn(
     children: Children,
-    #[prop(optional)] class: Option<&'static str>,
+    #[prop(optional, into)] class: MaybeSignal<String>,
     #[prop(optional)] is: Option<&'static str>,
     #[prop(optional)] is_offset: Option<&'static str>,
 ) -> impl IntoView {
@@ -25,8 +25,8 @@ pub fn BColumn(
             column_class.push_str(&format!(" is-offset-{is_offset}"));
         }
 
-        if let Some(class) = class {
-            column_class.push_str(&format!(" {class}"));
+        if !class.get().is_empty() {
+            column_class.push_str(&format!(" {}", class.get()));
         }
 
         column_class

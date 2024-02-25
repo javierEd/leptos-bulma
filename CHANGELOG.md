@@ -14,6 +14,7 @@
 
 - Upgrade dependencies.
 - Use Show Leptos component to toggle modal.
+- Column class can be a signal.
 
 ### Fixed
 
