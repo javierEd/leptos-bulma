@@ -22,6 +22,7 @@ grass = { version = "0.13", default-features = false }
 leptos = "0.6"
 leptos_router = "0.6"
 leptos-use = "0.10"
+web-sys = "0.3"
 
 [features]
 ssr = ["leptos-use/ssr"]

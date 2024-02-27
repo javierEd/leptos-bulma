@@ -2,13 +2,30 @@ use std::fs::File;
 use std::io::Write;
 use std::path::Path;
 
-use leptos::ev::MouseEvent;
+use leptos::ev::{Event, MouseEvent};
 use leptos::LeptosOptions;
 
 pub mod columns;
 pub mod components;
 pub mod elements;
 pub mod form;
+
+pub struct EventFn(Box<dyn Fn(Event) + 'static>);
+
+impl<T> From<T> for EventFn
+where
+    T: Fn(Event) + 'static,
+{
+    fn from(value: T) -> Self {
+        Self(Box::new(value))
+    }
+}
+
+impl EventFn {
+    pub fn into_inner(self) -> Box<dyn Fn(Event) + 'static> {
+        self.0
+    }
+}
 
 pub struct MouseEventFn(Box<dyn Fn(MouseEvent) + 'static>);
 

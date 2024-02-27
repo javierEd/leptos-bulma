@@ -1,5 +1,6 @@
 use leptos::*;
 
+mod b_file;
 mod b_input;
 mod b_password_field;
 mod b_select;
@@ -8,6 +9,7 @@ mod b_text_field;
 mod b_textarea;
 mod b_textarea_field;
 
+pub use b_file::*;
 pub use b_input::*;
 pub use b_password_field::*;
 pub use b_select::*;

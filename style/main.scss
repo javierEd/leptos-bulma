@@ -3,3 +3,22 @@
 .field .field.has-addons {
     margin-bottom: 0;
 }
+
+.file {
+    .file-name {
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+        width: 0;
+    }
+
+    .file-clear {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    &.has-file .file-name {
+        border-bottom-right-radius: 0;
+        border-right: 0;
+        border-top-right-radius: 0;
+    }
+}

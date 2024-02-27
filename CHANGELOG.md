@@ -9,6 +9,7 @@
 - Columns Leptos components.
 - Menu Leptos components.
 - A method to setup the library and generate the leptos-bulma.css file.
+- File upload Leptos component.
 
 ### Changed
 
