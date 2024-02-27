@@ -9,13 +9,12 @@
 - Columns Leptos components.
 - Menu Leptos components.
 - A method to setup the library and generate the leptos-bulma.css file.
-- File upload Leptos component.
+- File Leptos component.
 
 ### Changed
 
 - Upgrade dependencies.
 - Use Show Leptos component to toggle modal.
-- Column class can be a signal.
 
 ### Fixed
 
