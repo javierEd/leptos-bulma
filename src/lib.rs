@@ -2,6 +2,7 @@ use std::fs::File;
 use std::io::Write;
 use std::path::Path;
 
+use grass::OutputStyle;
 use leptos::ev::{Event, MouseEvent};
 use leptos::LeptosOptions;
 
@@ -51,14 +52,19 @@ impl LeptosBulma {
         let target_path = Path::new(&leptos_options.site_root)
             .join(&leptos_options.site_pkg_dir)
             .join("leptos-bulma.css");
+
         let mut target_file = File::options()
             .create(true)
-            .append(true)
+            .write(true)
             .open(target_path)
             .unwrap();
 
         let source_path = Path::new(env!("CARGO_MANIFEST_DIR")).join("style/main.scss");
-        let source_content = grass::from_path(source_path, &grass::Options::default()).unwrap();
+        let source_content = grass::from_path(
+            source_path,
+            &grass::Options::default().style(OutputStyle::Compressed),
+        )
+        .unwrap();
 
         target_file.write_all(source_content.as_bytes()).unwrap();
     }

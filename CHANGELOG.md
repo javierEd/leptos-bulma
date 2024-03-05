@@ -1,5 +1,15 @@
 # Changelog
 
+[Unreleased]
+
+### Changed
+
+- Compress generated CSS file content.
+
+### Fixed
+
+- Use File.write instead of append to generate CSS file.
+
 ## [0.0.0-alpha.5] - 2024-02-27
 
 ### Added
