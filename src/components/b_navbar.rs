@@ -42,21 +42,22 @@ pub fn BNavbarDivider() -> impl IntoView {
 }
 
 #[component]
-pub fn BNavbarEnd(children: Children) -> impl IntoView {
-    view! { <div class="navbar-end">{children()}</div> }
+pub fn BNavbarEnd(children: Children, #[prop(optional, into)] class: TextProp) -> impl IntoView {
+    view! { <div class=format!("navbar-end {}", class.get())>{children()}</div> }
 }
 
 #[component]
 pub fn BNavbarItem(
     children: Children,
-    #[prop(default = "")] class: &'static str,
-    #[prop(optional)] href: Option<&'static str>,
+    #[prop(optional, into)] class: TextProp,
+    #[prop(optional, into)] href: TextProp,
     #[prop(optional, into)] on_click: Option<MouseEventFn>,
+    #[prop(optional, into)] target: TextProp,
 ) -> impl IntoView
 where
 {
     view! {
-        <a class=format!("navbar-item {}", class) href=href>
+        <a class=format!("navbar-item {}", class.get()) href=href target=target>
             {children()}
         </a>
     }
@@ -97,16 +98,17 @@ where
 #[component]
 pub fn BNavbarMenu(
     children: Children,
+    #[prop(optional, into)] class: TextProp,
     #[prop(optional, into)] is_active: Option<MaybeSignal<bool>>,
 ) -> impl IntoView {
     view! {
-        <div class="navbar-menu" class:is-active=move || is_active.map(|v| v.get()) == Some(true)>
+        <div class=format!("navbar-menu {}", class.get()) class:is-active=move || is_active.map(|v| v.get()) == Some(true)>
             {children()}
         </div>
     }
 }
 
 #[component]
-pub fn BNavbarStart(children: Children) -> impl IntoView {
-    view! { <div class="navbar-start">{children()}</div> }
+pub fn BNavbarStart(children: Children, #[prop(optional, into)] class: TextProp) -> impl IntoView {
+    view! { <div class=format!("navbar-start {}", class.get())>{children()}</div> }
 }

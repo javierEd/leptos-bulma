@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- Add more props to navbar Leptos components.
+
 ### Changed
 
 - Upgrade to Bulma v1.0
