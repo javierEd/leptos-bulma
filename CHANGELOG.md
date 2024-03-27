@@ -5,6 +5,7 @@
 ### Added
 
 - Add more props to navbar Leptos components.
+- Add more props to form Leptos components.
 
 ### Changed
 

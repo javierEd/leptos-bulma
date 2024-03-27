@@ -2,25 +2,24 @@ use leptos::*;
 
 use super::{BControl, BField, BHelp, BLabel};
 
+use crate::EventFn;
+
 #[component]
 pub fn BTextField(
-    #[prop(optional, into)] error: Option<MaybeSignal<Option<String>>>,
+    #[prop(optional, into)] error: MaybeSignal<Option<String>>,
     #[prop(optional, into)] id: Option<&'static str>,
     #[prop(default = "text")] input_type: &'static str,
     #[prop(optional)] label: Option<&'static str>,
     #[prop(optional)] name: Option<&'static str>,
     #[prop(optional)] placeholder: Option<&'static str>,
     #[prop(optional, into)] value: MaybeSignal<String>,
+    #[prop(optional, into)] on_change: Option<EventFn>,
+    #[prop(optional, into)] on_input: Option<EventFn>,
 ) -> impl IntoView {
     let error_text = create_rw_signal(None);
 
     create_effect(move |_| {
-        error_text.set(
-            error
-                .clone()
-                .and_then(|e| e.get())
-                .map(|e| e.trim().to_owned()),
-        );
+        error_text.set(error.get().map(|e| e.trim().to_owned()));
     });
 
     let has_error = move || error_text.get().is_some();
@@ -33,6 +32,10 @@ pub fn BTextField(
         }
     };
 
+    let input_view = view! { <input class=input_class id=id type=input_type name=name placeholder=placeholder value=value/> }
+    .optional_event(ev::change, on_change.map(EventFn::into_inner))
+    .optional_event(ev::input, on_input.map(EventFn::into_inner));
+
     view! {
         <BField>
             <Show when=move || label.is_some()>
@@ -40,7 +43,7 @@ pub fn BTextField(
             </Show>
 
             <BControl class="is-expanded">
-                <input class=input_class id=id type=input_type name=name placeholder=placeholder value=value/>
+                {input_view}
             </BControl>
 
             <Show when=has_error>

@@ -4,7 +4,7 @@ use super::{BControl, BField, BHelp, BLabel};
 
 #[component]
 pub fn BSelectField(
-    #[prop(optional, into)] error: Option<MaybeSignal<Option<String>>>,
+    #[prop(optional, into)] error: MaybeSignal<Option<String>>,
     #[prop(optional, into)] id: Option<&'static str>,
     #[prop(optional)] label: Option<&'static str>,
     #[prop(optional)] name: Option<&'static str>,
@@ -14,12 +14,7 @@ pub fn BSelectField(
     let error_text = create_rw_signal(None);
 
     create_effect(move |_| {
-        error_text.set(
-            error
-                .clone()
-                .and_then(|e| e.get())
-                .map(|e| e.trim().to_owned()),
-        );
+        error_text.set(error.get().map(|e| e.trim().to_owned()));
     });
 
     let has_error = move || error_text.get().is_some();
