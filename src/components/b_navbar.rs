@@ -31,6 +31,7 @@ pub fn BNavbarBurger(is_active: RwSignal<bool>) -> impl IntoView {
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
         </a>
     }
 }

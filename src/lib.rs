@@ -1,8 +1,8 @@
 use std::fs::File;
 use std::io::Write;
 use std::path::Path;
+use std::process::Command;
 
-use grass::OutputStyle;
 use leptos::ev::{Event, MouseEvent};
 use leptos::LeptosOptions;
 
@@ -59,10 +59,17 @@ impl LeptosBulma {
             .open(target_path)
             .unwrap();
 
+        let _ = Command::new("npm")
+            .args(["--prefix", "./target", "install", "bulma@1.0"])
+            .output();
+
         let source_path = Path::new(env!("CARGO_MANIFEST_DIR")).join("style/main.scss");
         let source_content = grass::from_path(
             source_path,
-            &grass::Options::default().style(OutputStyle::Compressed),
+            &grass::Options::default()
+                .style(grass::OutputStyle::Compressed)
+                .load_path("./target/node_modules/bulma")
+                .allows_charset(true),
         )
         .unwrap();
 
