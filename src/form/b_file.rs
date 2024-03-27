@@ -1,5 +1,6 @@
 use leptos::html::Input;
 use leptos::*;
+use leptos_icons::Icon;
 use web_sys::{Event, MouseEvent};
 
 use crate::EventFn;
@@ -7,7 +8,6 @@ use crate::EventFn;
 #[component]
 pub fn BFile(
     #[prop(optional)] accept: Option<&'static str>,
-    #[prop(optional, into)] icon: Option<ViewFn>,
     #[prop(optional)] id: Option<&'static str>,
     #[prop(optional)] label: Option<&'static str>,
     #[prop(default = false)] multiple: bool,
@@ -77,7 +77,7 @@ pub fn BFile(
                 />
 
                 <span class="file-cta">
-                    {icon.map(|icon| view! { <span class="file-icon">{icon.run()}</span> })}
+                    <span class="file-icon is-medium"><Icon icon=icondata_fa::FaUploadSolid /></span>
                     <span class="file-label">{label}</span>
                 </span>
 

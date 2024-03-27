@@ -1,4 +1,5 @@
 use leptos::*;
+use leptos_icons::Icon;
 
 use super::{BControl, BField, BHelp, BLabel};
 
@@ -44,11 +45,11 @@ pub fn BPasswordField(
         }
     };
 
-    let icon_text = move || {
+    let visibility_icon = move || {
         if is_visible.get() {
-            "visibility"
+            view! { <Icon icon=icondata_fa::FaEyeSolid/> }
         } else {
-            "visibility_off"
+            view! { <Icon icon=icondata_fa::FaEyeSlashSolid/> }
         }
     };
 
@@ -65,7 +66,9 @@ pub fn BPasswordField(
 
                 <BControl>
                     <a class=button_class on:click=move |_| { is_visible.update(|v| *v = !*v) }>
-                        <span class="material-symbols-rounded">{icon_text}</span>
+                        <span class="icon">
+                            {visibility_icon}
+                        </span>
                     </a>
                 </BControl>
             </BField>

@@ -19,7 +19,9 @@ exclude = [
 
 [dependencies]
 grass = { version = "0.13", default-features = false }
+icondata_fa = "0.0"
 leptos = "0.6"
+leptos_icons = "0.3"
 leptos_router = "0.6"
 leptos-use = "0.10"
 web-sys = "0.3"

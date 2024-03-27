@@ -6,10 +6,11 @@
 
 - Add more props to navbar Leptos components.
 - Add more props to form Leptos components.
+- Add Leptos Icons with Font Awesome package.
 
 ### Changed
 
-- Upgrade to Bulma v1.0
+- Upgrade to Bulma v1.0.
 
 ## [0.0.0-alpha.6] - 2024-03-13
 
