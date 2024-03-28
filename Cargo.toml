@@ -1,30 +1,37 @@
 [package]
 name = "leptos-bulma"
 description = "A Leptos component library based on Bulma CSS framework."
-version = "0.0.0-alpha.7"
-edition = "2021"
 authors = ["Javier E. <jaedns@gmail.com>"]
-license = "MIT"
-readme = "README.md"
+homepage = "https://leptos-bulma.fermyon.app "
 repository = "https://github.com/javierEd/leptos-bulma.git"
+readme = "README.md"
+license = "MIT"
 categories = ["gui"]
 keywords = ["components", "leptos", "ui", "web"]
+version = "0.0.0-alpha.7"
+edition = "2021"
 exclude = [
     ".editorconfig",
     "bulma.jpg",
     "CHANGELOG.md",
-    "docs",
+    "website",
     "leptosfmt.toml",
 ]
+publish = true
 
 [dependencies]
 grass = { version = "0.13", default-features = false }
 icondata_fa = "0.0"
 leptos = "0.6"
 leptos_icons = "0.3"
-leptos_router = "0.6"
 leptos-use = "0.10"
 web-sys = "0.3"
 
 [features]
 ssr = ["leptos-use/ssr"]
+
+[profile.release]
+opt-level = 'z'
+lto = true
+codegen-units = 1
+panic = "abort"

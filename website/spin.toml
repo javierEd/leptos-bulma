@@ -1,0 +1,41 @@
+spin_manifest_version = 2
+
+[application]
+name = "leptos-bulma-website"
+version = "0.0.0-alpha.7"
+authors = ["Javier E. <jaedns@gmail.com>"]
+description = ""
+
+[[trigger.http]]
+route = "/..."
+component = "website"
+
+[component.website]
+source = "target/wasm32-wasi/release/website.wasm"
+allowed_outbound_hosts = []
+
+[component.website.build]
+command = "cargo leptos build --release"
+watch = [
+    "src/**/*.rs",
+    "Cargo.toml",
+    "build.rs",
+    "locales/*.yaml",
+    "style/main.scss",
+]
+
+[[trigger.http]]
+route = "/pkg/..."
+component = "pkg"
+
+[component.pkg]
+source = { url = "https://github.com/fermyon/spin-fileserver/releases/download/v0.1.0/spin_static_fs.wasm", digest = "sha256:96c76d9af86420b39eb6cd7be5550e3cb5d4cc4de572ce0fd1f6a29471536cb4" }
+files = [{ source = "target/site/pkg", destination = "/" }]
+
+[[trigger.http]]
+route = "/images/..."
+component = "images"
+
+[component.images]
+source = { url = "https://github.com/fermyon/spin-fileserver/releases/download/v0.1.0/spin_static_fs.wasm", digest = "sha256:96c76d9af86420b39eb6cd7be5550e3cb5d4cc4de572ce0fd1f6a29471536cb4" }
+files = [{ source = "target/site/images", destination = "/" }]

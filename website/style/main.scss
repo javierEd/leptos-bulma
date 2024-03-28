@@ -1,0 +1,13 @@
+@use "leptos-bulma.css";
+
+main.container {
+    min-height: calc(100vh - 275px);
+}
+
+.navbar-brand img {
+    max-height: unset;
+}
+
+.footer {
+    padding: 3rem 1.5rem;
+}

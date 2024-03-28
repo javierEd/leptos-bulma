@@ -1,0 +1,85 @@
+[package]
+name = "website"
+description = "Official website for Leptos Bulma."
+authors = ["Javier E. <jaedns@gmail.com>"]
+homepage = "https://leptos-bulma.fermyon.app "
+repository = "https://github.com/javierEd/leptos-bulma.git"
+readme = "README.md"
+license = "MIT"
+version = "0.0.0-alpha.7"
+edition = "2021"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[build-dependencies]
+leptos-bulma = { path = "../" }
+
+[dependencies]
+console_error_panic_hook = "0.1.7"
+http = "1.1.0"
+leptos = "0.6.9"
+leptos-bulma = { path = "../" }
+leptos_i18n = { version = "0.3.3", default-features = false, features = [
+    "cookie",
+    "yaml_files",
+] }
+leptos_integration_utils = { version = "0.6.9", optional = true }
+leptos_meta = "0.6.9"
+leptos_router = "0.6.9"
+leptos-spin = { version = "0.1.0", optional = true }
+serde = "1.0.197"
+spin-sdk = { version = "2.2.0", optional = true }
+wasm-bindgen = { version = "0.2.92", optional = true }
+
+[features]
+csr = ["leptos/csr", "leptos_i18n/csr", "leptos_meta/csr", "leptos_router/csr"]
+hydrate = [
+    "leptos/hydrate",
+    "leptos_i18n/hydrate",
+    "leptos_meta/hydrate",
+    "leptos_router/hydrate",
+    "dep:wasm-bindgen",
+]
+ssr = [
+    "leptos/ssr",
+    "leptos-bulma/ssr",
+    "leptos_meta/ssr",
+    "leptos_router/ssr",
+    "leptos/spin",
+    "dep:spin-sdk",
+    "dep:leptos-spin",
+    "dep:leptos_integration_utils",
+]
+
+# Defines a size-optimized profile for the WASM bundle in release mode
+[profile.wasm-release]
+inherits = "release"
+opt-level = 'z'
+lto = true
+codegen-units = 1
+panic = "abort"
+
+[package.metadata.leptos]
+# The name used by wasm-bindgen/cargo-leptos for the JS/WASM bundle. Defaults to the crate name
+output-name = "website"
+# [Optional] The source CSS file. If it ends with .sass or .scss then it will be compiled by dart-sass into CSS. The CSS is optimized by Lightning CSS before being written to <site-root>/<site-pkg>/app.css
+style-file = "style/main.scss"
+
+# Assets source dir. All files found here will be copied and synchronized to site-root.
+# The assets-dir cannot have a sub directory with the same name/path as site-pkg-dir.
+#
+# Optional. Env: LEPTOS_ASSETS_DIR.
+assets-dir = "assets"
+
+# Mandatory fields for Spin apps
+bin-target-triple = "wasm32-wasi"
+bin-features = ["ssr"]
+bin-default-features = false
+lib-features = ["hydrate"]
+lib-default-features = false
+
+[package.metadata.leptos-i18n]
+default = "en"
+locales = ["en", "es"]

@@ -1,0 +1,6 @@
+target/
+.spin/
+.vscode
+.envrc
+.direnv
+/style/leptos-bulma.css

@@ -1,4 +1,4 @@
-use std::fs::File;
+use std::fs::{create_dir_all, File};
 use std::io::Write;
 use std::path::Path;
 use std::process::Command;
@@ -49,9 +49,14 @@ pub struct LeptosBulma;
 
 impl LeptosBulma {
     pub fn setup(leptos_options: &LeptosOptions) {
-        let target_path = Path::new(&leptos_options.site_root)
-            .join(&leptos_options.site_pkg_dir)
-            .join("leptos-bulma.css");
+        let target_dir = Path::new(&leptos_options.site_root).join(&leptos_options.site_pkg_dir);
+        Self::build(target_dir)
+    }
+
+    pub fn build<P: AsRef<Path>>(target_dir: P) {
+        let target_path = target_dir.as_ref().join("leptos-bulma.css");
+
+        let _ = create_dir_all(target_dir);
 
         let mut target_file = File::options()
             .create(true)

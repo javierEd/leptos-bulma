@@ -1,5 +1,4 @@
 use leptos::*;
-use leptos_router::{ToHref, A};
 
 #[component]
 pub fn BAsideMenu(children: Children, #[prop(default = "")] class: &'static str) -> impl IntoView {
@@ -22,10 +21,10 @@ pub fn BMenuList(children: Children, #[prop(default = "")] class: &'static str) 
 }
 
 #[component]
-pub fn BMenuLink<H: ToHref + 'static>(
+pub fn BMenuLink(
     children: Children,
-    #[prop(default = "")] class: &'static str,
-    href: H,
+    #[prop(optional, into)] class: TextProp,
+    #[prop(optional, into)] href: TextProp,
 ) -> impl IntoView {
-    view! { <li><A active_class="is-active" class=class exact=true href=href>{children()}</A></li> }
+    view! { <li><a active_class="is-active" class=class exact=true href=href>{children()}</a></li> }
 }
