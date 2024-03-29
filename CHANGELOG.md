@@ -5,8 +5,9 @@
 ### Added
 
 - A website running with Leptos to replace the mdBook.
-- A guides page to the website.
-- A components page to the website.
+- A guides page on the website.
+- A components page on the website.
+- Leptos Icons with Font Awesome package on the website.
 
 ### Removed
 
@@ -16,9 +17,9 @@
 
 ### Added
 
-- Add more props to navbar Leptos components.
-- Add more props to form Leptos components.
-- Add Leptos Icons with Font Awesome package.
+- More props to navbar Leptos components.
+- More props to form Leptos components.
+- Leptos Icons with Font Awesome package.
 
 ### Changed
 

@@ -4,6 +4,7 @@ use leptos_bulma::components::{
     BDropdown, BDropdownItem, BNavbar, BNavbarBrand, BNavbarBurger, BNavbarEnd, BNavbarItem,
     BNavbarMenu, BNavbarStart,
 };
+use leptos_icons::Icon;
 
 use crate::i18n::{t, use_i18n, Locale};
 
@@ -23,7 +24,7 @@ pub fn Layout(children: Children) -> impl IntoView {
                         </figure>
                     </div>
                     <div class="media-content">
-                        <div class="title is-5 has-text-light">"Leptos Bulma"</div>
+                        <div class="title is-5">"Leptos Bulma"</div>
                     </div>
                 </BNavbarItem>
 
@@ -39,8 +40,8 @@ pub fn Layout(children: Children) -> impl IntoView {
 
                 <BNavbarEnd>
                     <a class="navbar-item" href="https://github.com/javierEd/leptos-bulma" target="_blank" title="GitHub">
-                        <span class="icon mx-1">
-                            <img src="/images/github-icon-light.svg" alt="GitHub"/>
+                        <span class="icon is-large">
+                            <Icon icon=icondata_fa::FaGithubBrands />
                         </span>
                     </a>
                 </BNavbarEnd>

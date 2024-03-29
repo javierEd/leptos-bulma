@@ -17,6 +17,9 @@ pub fn App() -> impl IntoView {
         // injects a stylesheet into the document <head>
         <Stylesheet id="leptos" href="/pkg/website.css"/>
 
+        // sets the favicon
+        <Link rel="icon" href="/images/favicon.png"/>
+
         // sets the document title
         <Title text="Leptos Bulma - A Leptos component library based on Bulma CSS framework"/>
 

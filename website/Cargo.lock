@@ -2342,10 +2342,12 @@ version = "0.0.0-alpha.7"
 dependencies = [
  "console_error_panic_hook",
  "http 1.1.0",
+ "icondata_fa",
  "leptos",
  "leptos-bulma",
  "leptos-spin",
  "leptos_i18n",
+ "leptos_icons",
  "leptos_integration_utils",
  "leptos_meta",
  "leptos_router",
