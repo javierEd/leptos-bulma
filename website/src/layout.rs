@@ -33,6 +33,7 @@ pub fn Layout(children: Children) -> impl IntoView {
             <BNavbarMenu is_active=burger_is_active>
                 <BNavbarStart>
                     <BNavbarItem href="/">{t!(i18n, home)}</BNavbarItem>
+                    <BNavbarItem href="/guides">{t!(i18n, guides)}</BNavbarItem>
                 </BNavbarStart>
 
                 <BNavbarEnd>

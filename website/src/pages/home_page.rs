@@ -10,7 +10,7 @@ pub fn HomePage() -> impl IntoView {
     view! {
         <PageTitle text=t!(i18n, home)/>
 
-        <div>
+        <div class="has-text-centered">
             <h3 class="title is-4">
                 <b>"Leptos Bulma"</b>" is a "<a href="https://leptos.dev" target="_blank">"Leptos"</a>
                 " component library based on "<a href="https://bulma.io" target="_blank">"Bulma"</a>" CSS framework."

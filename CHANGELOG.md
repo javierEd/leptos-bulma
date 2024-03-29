@@ -4,7 +4,12 @@
 
 ### Added
 
-- A Leptos application to replace the mdBook.
+- A website running with Leptos to replace the mdBook.
+- A guides page to the website.
+
+### Removed
+
+- Leptos Router dependency.
 
 ## [0.0.0-alpha.7] - 2024-03-27
 
