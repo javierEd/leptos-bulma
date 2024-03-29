@@ -6,6 +6,7 @@
 
 - A website running with Leptos to replace the mdBook.
 - A guides page to the website.
+- A components page to the website.
 
 ### Removed
 
