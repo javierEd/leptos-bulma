@@ -8,6 +8,7 @@
 - A guides page on the website.
 - A components page on the website.
 - Leptos Icons with Font Awesome package on the website.
+- More props to modal Leptos component and included close button by default.
 
 ### Removed
 

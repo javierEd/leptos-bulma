@@ -5,15 +5,29 @@ use leptos::*;
 pub fn BModal(
     children: ChildrenFn,
     #[prop(default = true)] has_background: bool,
+    #[prop(default = true)] has_close_button: bool,
+    #[prop(default = true)] is_dismissible: bool,
     is_active: RwSignal<bool>,
 ) -> impl IntoView {
     view! {
         <Show when=move || is_active.get()>
             <div class="modal is-active">
                 <Show when=move || has_background>
-                    <div class="modal-background"></div>
+                    <div
+                        class="modal-background"
+                        on:click=move |_| {
+                            if is_dismissible {
+                                is_active.set(false)
+                            }
+                        }
+                    >
+                    </div>
                 </Show>
                 {children()}
+
+                <Show when=move || has_close_button>
+                    <BModalClose on_click=move |_| is_active.set(false)/>
+                </Show>
             </div>
         </Show>
     }
