@@ -1,7 +1,7 @@
 use leptos::*;
 
 use crate::components::{GoToBulmaIo, GoToDocsRs, PageTitle};
-use crate::examples::{BasicDropdown, BasicModal, RustCodeExample};
+use crate::examples::{BasicDropdown, BasicModal, BasicNavbar, RustCodeExample};
 use crate::i18n::{t, use_i18n};
 
 #[component]
@@ -39,6 +39,20 @@ pub fn ComponentsPage() -> impl IntoView {
             <BasicModal/>
 
             <GoToDocsRs path="components/fn.BModal"/>
+        </section>
+
+        <section class="section">
+            <h3 class="title is-4">"Navbar"</h3>
+
+            <p class="block">"Example:"</p>
+
+            <RustCodeExample name="basic_navbar"/>
+
+            <p class="block">"See it in action:"</p>
+
+            <BasicNavbar/>
+
+            <GoToDocsRs path="components/fn.BNavbar"/>
         </section>
 
         <GoToBulmaIo path="components"/>

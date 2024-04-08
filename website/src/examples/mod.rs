@@ -8,11 +8,13 @@ use crate::components::CodeBlock;
 mod basic_box;
 mod basic_dropdown;
 mod basic_modal;
+mod basic_navbar;
 mod general_form;
 
 pub use basic_box::BasicBox;
 pub use basic_dropdown::BasicDropdown;
 pub use basic_modal::BasicModal;
+pub use basic_navbar::BasicNavbar;
 pub use general_form::GeneralForm;
 
 async fn get_code_example(name: &'static str) -> Result<String, JsValue> {
