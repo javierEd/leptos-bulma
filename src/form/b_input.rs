@@ -1,9 +1,11 @@
+use leptos::html::Input;
 use leptos::*;
 
 use crate::EventFn;
 
 #[component]
 pub fn BInput(
+    #[prop(optional)] node_ref: NodeRef<Input>,
     #[prop(optional, into)] class: Option<&'static str>,
     #[prop(optional)] id: Option<&'static str>,
     #[prop(default = "text")] input_type: &'static str,
@@ -16,6 +18,7 @@ pub fn BInput(
 ) -> impl IntoView {
     let mut b_input = view! {
         <input
+            node_ref=node_ref
             class=format!("input {}", class.unwrap_or_default())
             type=input_type
             id=id

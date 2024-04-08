@@ -1,15 +1,20 @@
+use leptos::html::Select;
 use leptos::*;
+
+use crate::EventFn;
 
 use super::{BControl, BField, BHelp, BLabel};
 
 #[component]
 pub fn BSelectField(
+    #[prop(optional)] node_ref: NodeRef<Select>,
     #[prop(optional, into)] error: MaybeSignal<Option<String>>,
     #[prop(optional, into)] id: Option<&'static str>,
     #[prop(optional)] label: Option<&'static str>,
     #[prop(optional)] name: Option<&'static str>,
-    #[prop(optional, into)] options: MaybeSignal<Option<Vec<(String, String)>>>,
-    #[prop(optional, into)] value: MaybeSignal<Option<String>>,
+    #[prop(optional, into)] options: MaybeSignal<Vec<(String, String)>>,
+    #[prop(optional, into)] value: MaybeSignal<String>,
+    #[prop(optional, into)] on_change: Option<EventFn>,
 ) -> impl IntoView {
     let error_text = create_rw_signal(None);
 
@@ -28,17 +33,16 @@ pub fn BSelectField(
     };
 
     let options_view = move || {
-        let options = options.clone().get().unwrap_or_default();
-        let mut options_view = vec![];
+        let mut options_vec = vec![];
 
-        for option in options {
-            let selected = if Some(option.1.clone()) == value.get() {
+        for option in options.get() {
+            let selected = if option.1.clone() == value.get() {
                 Some("selected")
             } else {
                 None
             };
 
-            options_view.push(
+            options_vec.push(
                 view! {
                     <option value=option.1.clone() selected=selected>
                         {option.0.clone()}
@@ -47,7 +51,16 @@ pub fn BSelectField(
                 .into_view(),
             );
         }
+
+        options_vec
     };
+
+    let select_view = view! {
+        <select node_ref=node_ref id=id name=name>
+            {options_view}
+        </select>
+    }
+    .optional_event(ev::change, on_change.map(EventFn::into_inner));
 
     view! {
         <BField>
@@ -56,11 +69,7 @@ pub fn BSelectField(
             </Show>
 
             <BControl class="is-expanded">
-                <div class=select_class>
-                    <select id=id name=name>
-                        {options_view}
-                    </select>
-                </div>
+                <div class=select_class>{select_view}</div>
             </BControl>
 
             <Show when=has_error>

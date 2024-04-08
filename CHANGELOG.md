@@ -10,6 +10,7 @@
 - Leptos Icons with Font Awesome package on the website.
 - More props to modal Leptos component and included close button by default.
 - Highlight.js for code examples.
+- More props to form Leptos components.
 
 ### Removed
 

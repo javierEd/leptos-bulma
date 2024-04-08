@@ -4,22 +4,21 @@ use leptos::*;
 pub fn BSelect(
     #[prop(optional)] id: Option<&'static str>,
     #[prop(optional)] name: Option<&'static str>,
-    #[prop(optional, into)] options: MaybeSignal<Option<Vec<(String, String)>>>,
+    #[prop(optional, into)] options: MaybeSignal<Vec<(String, String)>>,
     #[prop(optional, into)] value: MaybeSignal<Option<String>>,
     #[prop(attrs, optional)] attributes: Vec<(&'static str, Attribute)>,
 ) -> impl IntoView {
     let options_view = move || {
-        let options = options.clone().get().unwrap_or_default();
-        let mut options_view = vec![];
+        let mut options_vec = vec![];
 
-        for option in options {
+        for option in options.get() {
             let selected = if Some(option.1.clone()) == value.get() {
                 Some("selected")
             } else {
                 None
             };
 
-            options_view.push(
+            options_vec.push(
                 view! {
                     <option value=option.1.clone() selected=selected>
                         {option.0.clone()}
@@ -28,6 +27,8 @@ pub fn BSelect(
                 .into_view(),
             );
         }
+
+        options_vec
     };
 
     let mut b_select = view! {

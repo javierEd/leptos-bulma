@@ -1,3 +1,4 @@
+use leptos::html::Input;
 use leptos::*;
 
 use super::{BControl, BField, BHelp, BLabel};
@@ -6,6 +7,7 @@ use crate::EventFn;
 
 #[component]
 pub fn BTextField(
+    #[prop(optional)] node_ref: NodeRef<Input>,
     #[prop(optional, into)] error: MaybeSignal<Option<String>>,
     #[prop(optional, into)] id: Option<&'static str>,
     #[prop(default = "text")] input_type: &'static str,
@@ -32,7 +34,9 @@ pub fn BTextField(
         }
     };
 
-    let input_view = view! { <input class=input_class id=id type=input_type name=name placeholder=placeholder value=value/> }
+    let input_view = view! {
+        <input node_ref=node_ref class=input_class id=id type=input_type name=name placeholder=placeholder value=value/>
+    }
     .optional_event(ev::change, on_change.map(EventFn::into_inner))
     .optional_event(ev::input, on_input.map(EventFn::into_inner));
 
@@ -42,9 +46,7 @@ pub fn BTextField(
                 <BLabel for_id=id>{label.unwrap()}</BLabel>
             </Show>
 
-            <BControl class="is-expanded">
-                {input_view}
-            </BControl>
+            <BControl class="is-expanded">{input_view}</BControl>
 
             <Show when=has_error>
                 <BHelp class="is-danger">{error_text.get()}</BHelp>
