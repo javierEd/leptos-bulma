@@ -1,4 +1,3 @@
-use leptos::html::Input;
 use leptos::*;
 use leptos_icons::Icon;
 
@@ -6,9 +5,10 @@ use crate::EventFn;
 
 use super::{BControl, BField, BHelp, BLabel};
 
+#[allow(unused_variables)]
 #[component]
 pub fn BPasswordField(
-    #[prop(optional)] node_ref: NodeRef<Input>,
+    #[prop(optional)] node_ref: NodeRef<leptos::html::Input>,
     #[prop(optional, into)] error: MaybeSignal<Option<String>>,
     #[prop(optional)] id: Option<&'static str>,
     #[prop(optional)] label: Option<&'static str>,

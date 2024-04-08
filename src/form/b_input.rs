@@ -1,11 +1,11 @@
-use leptos::html::Input;
 use leptos::*;
 
 use crate::EventFn;
 
+#[allow(unused_variables)]
 #[component]
 pub fn BInput(
-    #[prop(optional)] node_ref: NodeRef<Input>,
+    #[prop(optional)] node_ref: NodeRef<leptos::html::Input>,
     #[prop(optional, into)] class: Option<&'static str>,
     #[prop(optional)] id: Option<&'static str>,
     #[prop(default = "text")] input_type: &'static str,

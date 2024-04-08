@@ -23,7 +23,6 @@ watch = [
     "js/**/*.js",
     "locales/*.yaml",
     "style/main.scss",
-    "../src/**/*.rs",
 ]
 
 [[trigger.http]]

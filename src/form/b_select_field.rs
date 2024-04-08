@@ -1,13 +1,13 @@
-use leptos::html::Select;
 use leptos::*;
 
 use crate::EventFn;
 
 use super::{BControl, BField, BHelp, BLabel};
 
+#[allow(unused_variables)]
 #[component]
 pub fn BSelectField(
-    #[prop(optional)] node_ref: NodeRef<Select>,
+    #[prop(optional)] node_ref: NodeRef<leptos::html::Select>,
     #[prop(optional, into)] error: MaybeSignal<Option<String>>,
     #[prop(optional, into)] id: Option<&'static str>,
     #[prop(optional)] label: Option<&'static str>,
