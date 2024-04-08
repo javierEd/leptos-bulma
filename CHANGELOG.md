@@ -21,6 +21,7 @@
 ### Removed
 
 - Leptos Router dependency.
+- mdBook folder.
 
 ## [0.0.0-alpha.7] - 2024-03-27
 
