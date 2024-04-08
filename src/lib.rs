@@ -49,20 +49,21 @@ pub struct LeptosBulma;
 
 impl LeptosBulma {
     pub fn setup(leptos_options: &LeptosOptions) {
-        let target_dir = Path::new(&leptos_options.site_root).join(&leptos_options.site_pkg_dir);
-        Self::build(target_dir)
+        let output_dir = Path::new(&leptos_options.site_root).join(&leptos_options.site_pkg_dir);
+        Self::build(output_dir)
     }
 
-    pub fn build<P: AsRef<Path>>(target_dir: P) {
-        let target_path = target_dir.as_ref().join("leptos-bulma.css");
+    pub fn build<P: AsRef<Path>>(output_dir: P) {
+        let output_path = output_dir.as_ref().join("leptos-bulma.css");
 
-        let _ = create_dir_all(target_dir);
+        let _ = create_dir_all(output_dir);
 
-        let mut target_file = File::options()
+        let mut output_file = File::options()
+            .truncate(true)
             .create(true)
             .write(true)
-            .open(target_path)
-            .unwrap();
+            .open(output_path)
+            .expect("Could not create output file");
 
         let _ = Command::new("npm")
             .args(["--prefix", "./target", "install", "bulma@1.0"])
@@ -78,6 +79,6 @@ impl LeptosBulma {
         )
         .unwrap();
 
-        target_file.write_all(source_content.as_bytes()).unwrap();
+        output_file.write_all(source_content.as_bytes()).unwrap();
     }
 }

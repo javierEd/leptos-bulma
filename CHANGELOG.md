@@ -13,6 +13,10 @@
 - More props to form Leptos components.
 - A form page on the website.
 
+### Changed
+
+- Small changes on the build method.
+
 ### Removed
 
 - Leptos Router dependency.
