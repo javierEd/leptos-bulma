@@ -14,7 +14,6 @@ pub fn App() -> impl IntoView {
     provide_i18n_context();
 
     view! {
-        // injects a stylesheet into the document <head>
         <Stylesheet id="leptos" href="/pkg/website.css"/>
 
         // sets the favicon
@@ -28,6 +27,7 @@ pub fn App() -> impl IntoView {
             <Layout>
                 <Routes>
                     <Route path="/components" view=ComponentsPage/>
+                    <Route path="/elements" view=ElementsPage/>
                     <Route path="/form" view=FormPage/>
                     <Route path="/guides" view=GuidesPage/>
                     <Route path="/" view=HomePage/>

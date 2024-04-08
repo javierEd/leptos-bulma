@@ -35,6 +35,7 @@ pub fn Layout(children: Children) -> impl IntoView {
                 <BNavbarStart>
                     <BNavbarItem href="/">{t!(i18n, home)}</BNavbarItem>
                     <BNavbarItem href="/guides">{t!(i18n, guides)}</BNavbarItem>
+                    <BNavbarItem href="/elements">{t!(i18n, elements)}</BNavbarItem>
                     <BNavbarItem href="/components">{t!(i18n, components)}</BNavbarItem>
                     <BNavbarItem href="/form">{t!(i18n, form)}</BNavbarItem>
                 </BNavbarStart>

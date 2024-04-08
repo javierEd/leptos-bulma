@@ -12,6 +12,7 @@
 - Highlight.js for code examples.
 - More props to form Leptos components.
 - A form page on the website.
+- An elements page on the website.
 
 ### Changed
 
