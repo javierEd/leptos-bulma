@@ -36,19 +36,27 @@ pub fn Layout(children: Children) -> impl IntoView {
                     <BNavbarItem href="/">{t!(i18n, home)}</BNavbarItem>
                     <BNavbarItem href="/guides">{t!(i18n, guides)}</BNavbarItem>
                     <BNavbarItem href="/components">{t!(i18n, components)}</BNavbarItem>
+                    <BNavbarItem href="/form">{t!(i18n, form)}</BNavbarItem>
                 </BNavbarStart>
 
                 <BNavbarEnd>
-                    <a class="navbar-item" href="https://github.com/javierEd/leptos-bulma" target="_blank" title="GitHub">
+                    <a
+                        class="navbar-item"
+                        href="https://github.com/javierEd/leptos-bulma"
+                        target="_blank"
+                        title="GitHub"
+                    >
                         <span class="icon is-large">
-                            <Icon icon=icondata_fa::FaGithubBrands />
+                            <Icon icon=icondata_fa::FaGithubBrands/>
                         </span>
                     </a>
                 </BNavbarEnd>
             </BNavbarMenu>
         </BNavbar>
 
-        <main class="container"><div class="m-5">{children()}</div></main>
+        <main class="container">
+            <div class="m-5">{children()}</div>
+        </main>
 
         <footer class="footer">
             <div class="content container">
@@ -58,12 +66,13 @@ pub fn Layout(children: Children) -> impl IntoView {
                             {t!(i18n, this_website_was_made_with)}
                             <a class="mx-3" href="https://leptos.dev" target="_blank" title="Go to Leptos">
                                 <picture>
-                                    <source srcset="/images/leptos-logo-light.svg" media="(prefers-color-scheme: dark)"/>
+                                    <source
+                                        srcset="/images/leptos-logo-light.svg"
+                                        media="(prefers-color-scheme: dark)"
+                                    />
                                     <img src="/images/leptos-logo.svg" alt="Leptos" width="100"/>
                                 </picture>
-                            </a>
-                            &
-                            <a class="mx-3" href="https://bulma.io/" target="_blank" title="Go to Bulma">
+                            </a> & <a class="mx-3" href="https://bulma.io/" target="_blank" title="Go to Bulma">
                                 <picture>
                                     <source srcset="/images/bulma-logo-light.svg" media="(prefers-color-scheme: dark)"/>
                                     <img src="/images/bulma-logo.svg" alt="Bulma" width="100"/>
@@ -79,7 +88,10 @@ pub fn Layout(children: Children) -> impl IntoView {
                                 title="Go to GitHub"
                             >
                                 <picture>
-                                    <source srcset="/images/github-logo-light.svg" media="(prefers-color-scheme: dark)"/>
+                                    <source
+                                        srcset="/images/github-logo-light.svg"
+                                        media="(prefers-color-scheme: dark)"
+                                    />
                                     <img src="/images/github-logo.svg" alt="GitHub" width="100"/>
                                 </picture>
                             </a>
@@ -87,13 +99,12 @@ pub fn Layout(children: Children) -> impl IntoView {
                     </BColumn>
 
                     <BColumn is="narrow">
-                        <BDropdown
-                            trigger=|| view! {
-                                <span class="has-text-weight-bold">{t!(i18n, change_language)}" ▼"</span>
-                            }
-                        >
-                            <BDropdownItem on_click=move|_| i18n.set_locale(Locale::en)>"English"</BDropdownItem>
-                            <BDropdownItem on_click=move|_| i18n.set_locale(Locale::es)>"Español"</BDropdownItem>
+                        <BDropdown trigger=|| {
+                            view! { <span class="has-text-weight-bold">{t!(i18n, change_language)} " ▼"</span> }
+                        }>
+
+                            <BDropdownItem on_click=move |_| i18n.set_locale(Locale::en)>"English"</BDropdownItem>
+                            <BDropdownItem on_click=move |_| i18n.set_locale(Locale::es)>"Español"</BDropdownItem>
                         </BDropdown>
                     </BColumn>
                 </BColumns>

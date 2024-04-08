@@ -7,9 +7,11 @@ use crate::components::CodeBlock;
 
 mod basic_dropdown;
 mod basic_modal;
+mod general_form;
 
 pub use basic_dropdown::BasicDropdown;
 pub use basic_modal::BasicModal;
+pub use general_form::GeneralForm;
 
 async fn get_code_example(name: &'static str) -> Result<String, JsValue> {
     let opts = RequestInit::new();
