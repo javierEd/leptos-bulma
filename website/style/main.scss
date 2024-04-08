@@ -1,7 +1,12 @@
 @use "leptos-bulma.css";
+@import url("https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github-dark-dimmed.min.css");
 
 main.container {
     min-height: calc(100vh - 275px);
+}
+
+pre {
+    padding: 0;
 }
 
 .navbar-brand img {

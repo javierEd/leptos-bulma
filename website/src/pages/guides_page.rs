@@ -1,6 +1,7 @@
+use indoc::indoc;
 use leptos::*;
 
-use crate::components::PageTitle;
+use crate::components::{CodeBlock, PageTitle};
 use crate::i18n::{t, use_i18n};
 
 #[component]
@@ -17,31 +18,33 @@ pub fn GuidesPage() -> impl IntoView {
 
             <p class="block">"Run the following command to add the crate to your Leptos application:"</p>
 
-            <pre class="block"><code>"cargo add leptos-bulma"</code></pre>
+            <CodeBlock language="bash">"cargo add leptos-bulma"</CodeBlock>
 
-            <p class="block">"Or add the following line to your "<code>"Cargo.toml"</code>" file:"</p>
+            <p class="block">"Or add the following line to your " <code>"Cargo.toml"</code> " file:"</p>
 
-            <pre class="block"><code>r#"leptos-bulma = "0.0.0-alpha.7""#</code></pre>
+            <CodeBlock>r#"leptos-bulma = "0.0.0-alpha.7""#</CodeBlock>
 
-            <p class="block">"Then add the following code to your "<code>"build.rs"</code>" file:"</p>
+            <p class="block">"Then add the following code to your " <code>"build.rs"</code> " file:"</p>
 
-            <pre class="block"><code>
-r#"fn main() {
-    // ···
-    leptos_bulma::LeptosBulma::build("./style");
-    // ···
-}"#
-            </code></pre>
+            <CodeBlock language="rust">
+                {indoc!(
+                    r#"fn main() {
+                    // ···
+                    leptos_bulma::LeptosBulma::build("./style");
+                    // ···
+                }"#
+                )}
+            </CodeBlock>
 
-            <p class="block">"Use "<code>"leptos-bulma.css"</code>" in your stylesheet:"</p>
+            <p class="block">"Use " <code>"leptos-bulma.css"</code> " in your stylesheet:"</p>
 
-            <pre class="block"><code>r#"@use "leptos-bulma.css";"#</code></pre>
+            <CodeBlock language="css">r#"@use "leptos-bulma.css";"#</CodeBlock>
 
             <p class="block">
-                "And finally, add "<code>"leptos-bulma.css"</code>" to your "<code>".gitignore"</code>" file:"
+                "And finally, add " <code>"leptos-bulma.css"</code> " to your " <code>".gitignore"</code> " file:"
             </p>
 
-            <pre class="block"><code>"/style/leptos-bulma.css"</code></pre>
+            <CodeBlock>"/style/leptos-bulma.css"</CodeBlock>
         </section>
     }
 }

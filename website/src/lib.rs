@@ -1,5 +1,6 @@
 mod app;
 mod components;
+mod examples;
 mod layout;
 mod pages;
 

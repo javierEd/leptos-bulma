@@ -1,5 +1,8 @@
+use leptos::html::Code;
 use leptos::*;
 use leptos_meta::Title;
+use wasm_bindgen::{prelude::wasm_bindgen, JsCast};
+use web_sys::HtmlElement;
 
 use crate::i18n::{t, use_i18n};
 
@@ -8,11 +11,32 @@ pub fn PageTitle(#[prop(into)] text: TextProp) -> impl IntoView {
     view! { <Title text=format!("{} | Leptos Bulma", text.get())/> }
 }
 
+#[wasm_bindgen(module = "/js/highlight.js")]
+extern "C" {
+    #[wasm_bindgen(js_name = highlightElement)]
+    fn highlight_element(element: &HtmlElement);
+}
+
 #[component]
-pub fn CodeBlock(children: Children) -> impl IntoView {
+pub fn CodeBlock(
+    children: Children,
+    #[prop(default = "plaintext")] language: &'static str,
+) -> impl IntoView {
+    let node_ref = create_node_ref::<Code>();
+
+    create_effect(move |_| {
+        if let Some(element) = node_ref.get() {
+            if let Some(el) = element.dyn_ref::<HtmlElement>() {
+                highlight_element(el)
+            }
+        }
+    });
+
     view! {
         <pre class="block">
-            <code>{children()}</code>
+            <code node_ref=node_ref class=format!("language-{language}")>
+                {children()}
+            </code>
         </pre>
     }
 }
@@ -23,7 +47,7 @@ pub fn GoToBulmaIo(path: &'static str) -> impl IntoView {
 
     view! {
         <section class="section">
-            {t!(i18n, to_find_more_information_you_can_check_the_official_bulma_documentation)} ": "
+            {t!(i18n, additionally_you_can_check_bulma_official_documentation)} ": "
             <a href=format!("https://bulma.io/documentation/{path}") target="_blank">
                 {format!("bulma.io/documentation/{path}")}
             </a>
