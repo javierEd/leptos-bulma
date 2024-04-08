@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## [0.0.0-alpha.8] - 2024-04-08
 
 ### Added
 
