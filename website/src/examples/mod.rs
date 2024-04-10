@@ -9,12 +9,14 @@ mod basic_box;
 mod basic_dropdown;
 mod basic_modal;
 mod basic_navbar;
+mod basic_pagination;
 mod general_form;
 
 pub use basic_box::BasicBox;
 pub use basic_dropdown::BasicDropdown;
 pub use basic_modal::BasicModal;
 pub use basic_navbar::BasicNavbar;
+pub use basic_pagination::BasicPagination;
 pub use general_form::GeneralForm;
 
 async fn get_code_example(name: &'static str) -> Result<String, JsValue> {
@@ -35,7 +37,9 @@ pub fn RustCodeExample(name: &'static str) -> impl IntoView {
     let resource = create_local_resource(move || name, get_code_example);
 
     view! {
-        <Suspense>
+        <Suspense fallback=move || {
+            view! { <CodeBlock>"Loading..."</CodeBlock> }
+        }>
             {resource
                 .get()
                 .and_then(|result| result.ok())

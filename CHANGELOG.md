@@ -5,6 +5,7 @@
 # Added
 
 - Optional callback when modal is closed.
+- Pagination Leptos component.
 
 ## [0.0.0-alpha.8] - 2024-04-08
 

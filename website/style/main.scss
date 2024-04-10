@@ -7,6 +7,8 @@ main.container {
 
 pre {
     padding: 0;
+    overflow-y: auto;
+    max-height: 250px;
 }
 
 .navbar-brand img {
@@ -20,4 +22,9 @@ pre {
 .navbar .icon svg {
     width: 100%;
     height: 100%;
+}
+
+.pagination a.is-disabled {
+    pointer-events: none;
+    cursor: default;
 }
