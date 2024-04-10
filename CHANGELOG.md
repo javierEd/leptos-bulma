@@ -7,6 +7,10 @@
 - Optional callback when modal is closed.
 - Pagination Leptos component.
 
+## Fixed
+
+- Some navbar props.
+
 ## [0.0.0-alpha.8] - 2024-04-08
 
 ### Added

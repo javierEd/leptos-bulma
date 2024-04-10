@@ -1,11 +1,9 @@
 use leptos::html::{Div, A};
 use leptos::*;
 
-use crate::MouseEventFn;
-
 #[component]
-pub fn BNavbar(children: Children, #[prop(default = "")] class: &'static str) -> impl IntoView {
-    view! { <nav class=format!("navbar {}", class)>{children()}</nav> }
+pub fn BNavbar(children: Children, #[prop(optional, into)] class: TextProp) -> impl IntoView {
+    view! { <nav class=format!("navbar {}", class.get())>{children()}</nav> }
 }
 
 #[component]
@@ -50,24 +48,20 @@ pub fn BNavbarEnd(children: Children, #[prop(optional, into)] class: TextProp) -
 pub fn BNavbarItem(
     children: Children,
     #[prop(optional, into)] class: TextProp,
-    #[prop(optional, into)] href: TextProp,
-    #[prop(optional, into)] on_click: Option<MouseEventFn>,
-    #[prop(optional, into)] target: TextProp,
-) -> impl IntoView
-where
-{
+    #[prop(optional, into)] href: Option<TextProp>,
+    #[prop(optional, into)] target: Option<TextProp>,
+) -> impl IntoView {
     view! {
         <a class=format!("navbar-item {}", class.get()) href=href target=target>
             {children()}
         </a>
     }
-    .optional_event(ev::click, on_click.map(MouseEventFn::into_inner))
 }
 
 #[component]
 pub fn BNavbarItemDropdown<F, IV>(
     children: Children,
-    #[prop(default = "")] dropdown_class: &'static str,
+    #[prop(optional, into)] dropdown_class: TextProp,
     trigger: F,
 ) -> impl IntoView
 where
@@ -90,7 +84,7 @@ where
         >
             <a class="navbar-link">{trigger()}</a>
 
-            <div class=format!("navbar-dropdown {}", dropdown_class)>{children()}</div>
+            <div class=format!("navbar-dropdown {}", dropdown_class.get())>{children()}</div>
         </div>
     }
 }
@@ -102,7 +96,10 @@ pub fn BNavbarMenu(
     #[prop(optional, into)] is_active: Option<MaybeSignal<bool>>,
 ) -> impl IntoView {
     view! {
-        <div class=format!("navbar-menu {}", class.get()) class:is-active=move || is_active.map(|v| v.get()) == Some(true)>
+        <div
+            class=format!("navbar-menu {}", class.get())
+            class:is-active=move || is_active.map(|v| v.get()) == Some(true)
+        >
             {children()}
         </div>
     }
