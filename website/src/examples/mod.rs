@@ -6,6 +6,7 @@ use web_sys::{Request, RequestInit, Response};
 use crate::components::CodeBlock;
 
 mod basic_box;
+mod basic_columns;
 mod basic_dropdown;
 mod basic_modal;
 mod basic_navbar;
@@ -13,6 +14,7 @@ mod basic_pagination;
 mod general_form;
 
 pub use basic_box::BasicBox;
+pub use basic_columns::BasicColumns;
 pub use basic_dropdown::BasicDropdown;
 pub use basic_modal::BasicModal;
 pub use basic_navbar::BasicNavbar;

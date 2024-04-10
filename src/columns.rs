@@ -1,38 +1,32 @@
 use leptos::*;
 
 #[component]
-pub fn BColumns(children: Children, #[prop(default = "")] class: &'static str) -> impl IntoView {
-    view! {
-        <div class=format!("columns {}", class)>{children()}</div>
-    }
+pub fn BColumns(children: Children, #[prop(optional, into)] class: TextProp) -> impl IntoView {
+    view! { <div class=format!("columns {}", class.get())>{children()}</div> }
 }
 
 #[component]
 pub fn BColumn(
     children: Children,
-    #[prop(optional, into)] class: MaybeSignal<String>,
-    #[prop(optional)] is: Option<&'static str>,
-    #[prop(optional)] is_offset: Option<&'static str>,
+    #[prop(optional, into)] class: TextProp,
+    #[prop(optional, into)] is: TextProp,
+    #[prop(optional)] is_offset: TextProp,
 ) -> impl IntoView {
     let column_class = move || {
         let mut column_class = "column".to_owned();
 
-        if let Some(is) = is {
-            column_class.push_str(&format!(" is-{is}"));
+        if !is.get().is_empty() {
+            column_class.push_str(&format!(" is-{}", is.get()));
         }
 
-        if let Some(is_offset) = is_offset {
-            column_class.push_str(&format!(" is-offset-{is_offset}"));
+        if !is_offset.get().is_empty() {
+            column_class.push_str(&format!(" is-offset-{}", is_offset.get()));
         }
 
-        if !class.get().is_empty() {
-            column_class.push_str(&format!(" {}", class.get()));
-        }
+        column_class.push_str(&format!(" {}", class.get()));
 
         column_class
     };
 
-    view! {
-        <div class=column_class>{children()}</div>
-    }
+    view! { <div class=column_class>{children()}</div> }
 }

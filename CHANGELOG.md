@@ -6,10 +6,12 @@
 
 - Optional callback when modal is closed.
 - Pagination Leptos component.
+- Columns page on the website;
 
 ## Fixed
 
 - Some navbar props.
+- Some columns and box props.
 
 ## Removed
 
