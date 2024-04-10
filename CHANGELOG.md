@@ -11,6 +11,10 @@
 
 - Some navbar props.
 
+## Removed
+
+- navbar markdown file.
+
 ## [0.0.0-alpha.8] - 2024-04-08
 
 ### Added
