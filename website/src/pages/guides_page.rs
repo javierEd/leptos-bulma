@@ -22,7 +22,7 @@ pub fn GuidesPage() -> impl IntoView {
 
             <p class="block">"Or add the following line to your " <code>"Cargo.toml"</code> " file:"</p>
 
-            <CodeBlock>r#"leptos-bulma = "0.0.0-alpha.8""#</CodeBlock>
+            <CodeBlock>r#"leptos-bulma = "0.0.0-alpha.9""#</CodeBlock>
 
             <p class="block">"Then add the following code to your " <code>"build.rs"</code> " file:"</p>
 
