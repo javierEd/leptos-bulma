@@ -19,15 +19,14 @@ And any suggestions are appreciated.
 
 ## What is mostly ready?
 
-### Columns
-
-- [x] Columns
-- [x] Column
-
 ### Elements
 
+- [x] Block
 - [x] Box
 - [x] Button
+- [x] Notification
+- [x] Table
+- [x] Title
 
 ### Components
 
@@ -43,6 +42,16 @@ And any suggestions are appreciated.
 - [x] Select
 - [x] Textarea
 - [x] File
+- [x] Checkbox
+
+### Columns
+
+- [x] Columns
+- [x] Column
+
+### Layout
+
+- [x] Section
 
 ## How to install
 
@@ -54,9 +63,8 @@ cargo add leptos-bulma
 
 Or add the following line to your `Cargo.toml` file:
 
-```toml
-leptos-bulma = "0.0.0-alpha.9"
-```
+````toml
+leptos-bulma = "0.0.0-alpha.10"
 
 Then add the following code to your `build.rs` file:
 
@@ -66,7 +74,7 @@ fn main() {
     leptos_bulma::LeptosBulma::build("./style");
     // ···
 }
-```
+````
 
 Use `leptos-bulma.css` in your stylesheet:
 
