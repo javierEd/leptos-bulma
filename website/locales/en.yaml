@@ -6,6 +6,7 @@ elements: Elements
 form: Form
 guides: Guides
 home: Home
+layout: Layout
 this_website_was_made_with: This website was made with
 to_find_more_information_you_can_go_to: To find more information, you can go to
 additionally_you_can_check_bulma_official_documentation: Additionally, you can check Bulma official documentation

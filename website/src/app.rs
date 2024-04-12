@@ -31,6 +31,7 @@ pub fn App() -> impl IntoView {
                     <Route path="/elements" view=ElementsPage/>
                     <Route path="/form" view=FormPage/>
                     <Route path="/guides" view=GuidesPage/>
+                    <Route path="/layout" view=LayoutPage/>
                     <Route path="/" view=HomePage/>
                     <Route path="/*" view=NotFoundPage/>
                 </Routes>

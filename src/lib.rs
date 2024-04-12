@@ -10,6 +10,7 @@ pub mod columns;
 pub mod components;
 pub mod elements;
 pub mod form;
+pub mod layout;
 
 pub struct EventFn(Box<dyn Fn(Event) + 'static>);
 

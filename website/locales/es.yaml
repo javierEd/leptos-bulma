@@ -6,6 +6,7 @@ elements: Elementos
 form: Formulario
 guides: Guias
 home: Inicio
+layout: Layout
 this_website_was_made_with: Este sitio web fue hecho con
 to_find_more_information_you_can_go_to: Para encontrar más información, puedes ir a
 additionally_you_can_check_bulma_official_documentation: Adicionalmente, puedes consultar la documentación oficial de Bulma

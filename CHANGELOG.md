@@ -7,6 +7,7 @@
 - Checkbox Leptos component.
 - Block Leptos component.
 - Title and subtitle Leptos components.
+- Section Leptos component.
 
 ## [0.0.0-alpha.9] - 2024-04-10
 
