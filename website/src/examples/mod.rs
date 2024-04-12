@@ -13,6 +13,7 @@ mod basic_modal;
 mod basic_navbar;
 mod basic_pagination;
 mod basic_section;
+mod basic_table;
 mod basic_title;
 mod general_form;
 
@@ -24,6 +25,7 @@ pub use basic_modal::BasicModal;
 pub use basic_navbar::BasicNavbar;
 pub use basic_pagination::BasicPagination;
 pub use basic_section::BasicSection;
+pub use basic_table::BasicTable;
 pub use basic_title::BasicTitle;
 pub use general_form::GeneralForm;
 

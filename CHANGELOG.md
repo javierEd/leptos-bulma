@@ -8,6 +8,7 @@
 - Block Leptos component.
 - Title and subtitle Leptos components.
 - Section Leptos component.
+- Table Leptos components.
 
 ## [0.0.0-alpha.9] - 2024-04-10
 
