@@ -10,7 +10,7 @@ pub fn BColumn(
     children: Children,
     #[prop(optional, into)] class: TextProp,
     #[prop(optional, into)] is: TextProp,
-    #[prop(optional)] is_offset: TextProp,
+    #[prop(optional, into)] is_offset: TextProp,
 ) -> impl IntoView {
     let column_class = move || {
         let mut column_class = "column".to_owned();

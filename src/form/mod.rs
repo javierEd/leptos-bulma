@@ -1,5 +1,7 @@
 use leptos::*;
 
+mod b_checkbox;
+mod b_checkbox_field;
 mod b_file;
 mod b_input;
 mod b_password_field;
@@ -9,6 +11,8 @@ mod b_text_field;
 mod b_textarea;
 mod b_textarea_field;
 
+pub use b_checkbox::*;
+pub use b_checkbox_field::*;
 pub use b_file::*;
 pub use b_input::*;
 pub use b_password_field::*;
