@@ -1,7 +1,7 @@
 use leptos::*;
 
 use crate::components::{GoToBulmaIo, GoToDocsRs, PageTitle};
-use crate::examples::{BasicBox, RustCodeExample};
+use crate::examples::{BasicBlock, BasicBox, RustCodeExample};
 use crate::i18n::{t, use_i18n};
 
 #[component]
@@ -14,6 +14,18 @@ pub fn ElementsPage() -> impl IntoView {
         <h2 class="title is-3">{t!(i18n, elements)}</h2>
 
         <section class="section">
+            <h3 class="title is-4">"Block"</h3>
+
+            <p class="block">"Example:"</p>
+
+            <RustCodeExample name="basic_block"/>
+
+            <p class="block">"See it in action:"</p>
+
+            <BasicBlock/>
+
+            <GoToDocsRs path="elements/fn.BBlock"/>
+
             <h3 class="title is-4">"Box"</h3>
 
             <p class="block">"Example:"</p>
