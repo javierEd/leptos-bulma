@@ -1,7 +1,8 @@
 use leptos::*;
+use leptos_bulma::elements::{BBlock, BTitle};
 
 use crate::components::{GoToBulmaIo, GoToDocsRs, PageTitle};
-use crate::examples::{BasicBlock, BasicBox, RustCodeExample};
+use crate::examples::{BasicBlock, BasicBox, BasicTitle, RustCodeExample};
 use crate::i18n::{t, use_i18n};
 
 #[component]
@@ -11,32 +12,44 @@ pub fn ElementsPage() -> impl IntoView {
     view! {
         <PageTitle text=t!(i18n, elements)/>
 
-        <h2 class="title is-3">{t!(i18n, elements)}</h2>
+        <BTitle is=3>{t!(i18n, elements)}</BTitle>
 
         <section class="section">
-            <h3 class="title is-4">"Block"</h3>
+            <BTitle is=4>"Block"</BTitle>
 
-            <p class="block">"Example:"</p>
+            <BBlock>"Example:"</BBlock>
 
             <RustCodeExample name="basic_block"/>
 
-            <p class="block">"See it in action:"</p>
+            <BBlock>"See it in action:"</BBlock>
 
             <BasicBlock/>
 
             <GoToDocsRs path="elements/fn.BBlock"/>
 
-            <h3 class="title is-4">"Box"</h3>
+            <BTitle is=4>"Box"</BTitle>
 
-            <p class="block">"Example:"</p>
+            <BBlock>"Example:"</BBlock>
 
             <RustCodeExample name="basic_box"/>
 
-            <p class="block">"See it in action:"</p>
+            <BBlock>"See it in action:"</BBlock>
 
             <BasicBox/>
 
             <GoToDocsRs path="elements/fn.BBox"/>
+
+            <BTitle is=4>"Title"</BTitle>
+
+            <BBlock>"Example:"</BBlock>
+
+            <RustCodeExample name="basic_title"/>
+
+            <BBlock>"See it in action:"</BBlock>
+
+            <BasicTitle/>
+
+            <GoToDocsRs path="elements/fn.BBTitle"/>
         </section>
 
         <GoToBulmaIo path="elements"/>
