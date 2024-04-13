@@ -64,7 +64,7 @@ cargo add leptos-bulma
 Or add the following line to your `Cargo.toml` file:
 
 ```toml
-leptos-bulma = "0.0.0-alpha.10"
+leptos-bulma = "0.0.0-alpha.11"
 ```
 
 Then add the following code to your `build.rs` file:
