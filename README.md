@@ -63,8 +63,9 @@ cargo add leptos-bulma
 
 Or add the following line to your `Cargo.toml` file:
 
-````toml
+```toml
 leptos-bulma = "0.0.0-alpha.10"
+```
 
 Then add the following code to your `build.rs` file:
 
@@ -74,7 +75,7 @@ fn main() {
     leptos_bulma::LeptosBulma::build("./style");
     // ···
 }
-````
+```
 
 Use `leptos-bulma.css` in your stylesheet:
 

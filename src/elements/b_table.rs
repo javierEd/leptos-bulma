@@ -1,3 +1,5 @@
+use std::hash::Hash;
+
 use leptos::*;
 
 #[component]
@@ -6,36 +8,52 @@ pub fn BTable(#[prop(optional, into)] class: TextProp, children: Children) -> im
 }
 
 #[component]
-pub fn BTbody<I, IV>(
+pub fn BTbody<IF, I, T, EF, N, KF, K>(
     #[prop(optional, into)] class: TextProp,
-    #[prop(into)] rows: MaybeSignal<I>,
+    each_row: IF,
+    key: KF,
+    children: EF,
 ) -> impl IntoView
 where
-    I: IntoIterator<Item = (&'static str, IV)> + 'static + Clone,
-    IV: IntoView + 'static + Clone,
+    IF: Fn() -> I + 'static,
+    I: IntoIterator<Item = T>,
+    EF: Fn(T) -> N + 'static,
+    N: IntoView + 'static,
+    KF: Fn(&T) -> K + 'static,
+    K: Eq + Hash + 'static,
+    T: 'static,
 {
     view! {
         <tbody class=class>
-            <For each=move || { rows.get() } key=|(k, _)| { *k } let:row>
-                <tr>{row.1}</tr>
+            <For each=each_row key=key let:data>
+                <tr>{children(data)}</tr>
             </For>
         </tbody>
     }
 }
 
 #[component]
-pub fn BTfoot<IF, I, IV>(#[prop(optional, into)] class: TextProp, cells: IF) -> impl IntoView
+pub fn BTfoot<IF, I, T, EF, N, KF, K>(
+    #[prop(optional, into)] class: TextProp,
+    each_cell: IF,
+    key: KF,
+    children: EF,
+) -> impl IntoView
 where
     IF: Fn() -> I + 'static,
-    I: IntoIterator<Item = (&'static str, IV)>,
-    IV: IntoView + 'static + Clone,
+    I: IntoIterator<Item = T>,
+    EF: Fn(T) -> N + 'static,
+    N: IntoView + 'static,
+    KF: Fn(&T) -> K + 'static,
+    K: Eq + Hash + 'static,
+    T: 'static,
 {
     view! {
         <tfoot class=class>
             <tr>
-                <For each=cells key=|(k, _)| { *k } let:cell>
+                <For each=each_cell key=key let:data>
 
-                    <th>{cell.1}</th>
+                    <th>{children(data)}</th>
                 </For>
             </tr>
         </tfoot>
@@ -43,18 +61,27 @@ where
 }
 
 #[component]
-pub fn BThead<IF, I, IV>(#[prop(optional, into)] class: TextProp, cells: IF) -> impl IntoView
+pub fn BThead<IF, I, T, EF, N, KF, K>(
+    #[prop(optional, into)] class: TextProp,
+    each_cell: IF,
+    key: KF,
+    children: EF,
+) -> impl IntoView
 where
     IF: Fn() -> I + 'static,
-    I: IntoIterator<Item = (&'static str, IV)>,
-    IV: IntoView + 'static + Clone,
+    I: IntoIterator<Item = T>,
+    EF: Fn(T) -> N + 'static,
+    N: IntoView + 'static,
+    KF: Fn(&T) -> K + 'static,
+    K: Eq + Hash + 'static,
+    T: 'static,
 {
     view! {
         <thead class=class>
             <tr>
-                <For each=cells key=|(k, _)| { *k } let:cell>
+                <For each=each_cell key=key let:data>
 
-                    <th>{cell.1}</th>
+                    <th>{children(data)}</th>
                 </For>
             </tr>
         </thead>

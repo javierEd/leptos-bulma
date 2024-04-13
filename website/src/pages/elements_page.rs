@@ -68,7 +68,7 @@ pub fn ElementsPage() -> impl IntoView {
 
             <BasicTitle/>
 
-            <GoToDocsRs path="elements/fn.BBTitle"/>
+            <GoToDocsRs path="elements/fn.BTitle"/>
         </BSection>
 
         <GoToBulmaIo path="elements"/>
