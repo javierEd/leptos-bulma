@@ -4,16 +4,27 @@ use leptos_bulma::components::{
     BDropdown, BDropdownItem, BNavbar, BNavbarBrand, BNavbarBurger, BNavbarEnd, BNavbarItem,
     BNavbarMenu, BNavbarStart,
 };
-use leptos_bulma::elements::BIcon;
+use leptos_bulma::elements::{BButton, BButtons, BIcon};
 use leptos_bulma::icons::icondata_fa;
 
+use crate::app::use_theme_context;
 use crate::i18n::{t, use_i18n, Locale};
 
 #[component]
 pub fn Layout(children: Children) -> impl IntoView {
     let i18n = use_i18n();
-
+    let theme = use_theme_context();
+    let theme_is_dark = create_rw_signal(theme.is_dark());
+    let theme_is_light = create_rw_signal(theme.is_light());
+    let theme_is_system = create_rw_signal(theme.is_system());
     let burger_is_active = create_rw_signal(false);
+
+    create_effect(move |_| {
+        theme.get();
+        theme_is_dark.set(theme.is_dark());
+        theme_is_light.set(theme.is_light());
+        theme_is_system.set(theme.is_system());
+    });
 
     view! {
         <BNavbar class="has-shadow">
@@ -102,6 +113,7 @@ pub fn Layout(children: Children) -> impl IntoView {
 
                     <BColumn is="narrow">
                         <BDropdown
+                            class="mb-4"
                             is_right=true
                             is_up=true
                             trigger=move || {
@@ -112,6 +124,23 @@ pub fn Layout(children: Children) -> impl IntoView {
                             <BDropdownItem on:click=move |_| i18n.set_locale(Locale::en)>"English"</BDropdownItem>
                             <BDropdownItem on:click=move |_| i18n.set_locale(Locale::es)>"Español"</BDropdownItem>
                         </BDropdown>
+
+                        <BButtons has_addons=true>
+                            <BButton
+                                class="ml-auto"
+                                title="System theme"
+                                is_active=theme_is_system
+                                on:click=move |_| theme.set_system()
+                            >
+                                <BIcon is_scaled=false icon=icondata_fa::FaDesktopSolid/>
+                            </BButton>
+                            <BButton title="Light theme" is_active=theme_is_light on:click=move |_| theme.set_light()>
+                                <BIcon is_scaled=false icon=icondata_fa::FaSunSolid/>
+                            </BButton>
+                            <BButton title="Dark theme" is_active=theme_is_dark on:click=move |_| theme.set_dark()>
+                                <BIcon is_scaled=false icon=icondata_fa::FaMoonSolid/>
+                            </BButton>
+                        </BButtons>
                     </BColumn>
                 </BColumns>
             </div>

@@ -7,6 +7,10 @@
 - Optional prop `is_checked` on checkbox.
 - Icon Leptos components.
 - More props to dropdown Leptos component.
+- More props to button Leptos component.
+- Buttons Leptos component.
+- Button example on the website.
+- Toggle between light and dark themes on the website.
 
 ## [0.0.0-alpha.11] - 2024-04-13
 

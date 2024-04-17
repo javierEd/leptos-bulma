@@ -7,6 +7,7 @@ use crate::components::CodeBlock;
 
 mod basic_block;
 mod basic_box;
+mod basic_button;
 mod basic_columns;
 mod basic_dropdown;
 mod basic_icon;
@@ -20,6 +21,7 @@ mod general_form;
 
 pub use basic_block::BasicBlock;
 pub use basic_box::BasicBox;
+pub use basic_button::BasicButton;
 pub use basic_columns::BasicColumns;
 pub use basic_dropdown::BasicDropdown;
 pub use basic_icon::BasicIcon;
