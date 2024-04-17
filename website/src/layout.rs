@@ -101,12 +101,16 @@ pub fn Layout(children: Children) -> impl IntoView {
                     </BColumn>
 
                     <BColumn is="narrow">
-                        <BDropdown trigger=|| {
-                            view! { <span class="has-text-weight-bold">{t!(i18n, change_language)} " ▼"</span> }
-                        }>
+                        <BDropdown
+                            is_right=true
+                            is_up=true
+                            trigger=move || {
+                                view! { <span class="has-text-weight-bold">{t!(i18n, change_language)} " ▲"</span> }
+                            }
+                        >
 
-                            <BDropdownItem on_click=move |_| i18n.set_locale(Locale::en)>"English"</BDropdownItem>
-                            <BDropdownItem on_click=move |_| i18n.set_locale(Locale::es)>"Español"</BDropdownItem>
+                            <BDropdownItem on:click=move |_| i18n.set_locale(Locale::en)>"English"</BDropdownItem>
+                            <BDropdownItem on:click=move |_| i18n.set_locale(Locale::es)>"Español"</BDropdownItem>
                         </BDropdown>
                     </BColumn>
                 </BColumns>

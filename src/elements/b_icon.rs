@@ -3,10 +3,10 @@ use leptos::*;
 #[cfg(not(feature = "leptos-icons"))]
 #[component]
 pub fn BIcon(
-    #[prop(optional, into)] is_large: MaybeProp<bool>,
-    #[prop(optional, into)] is_medium: MaybeProp<bool>,
-    #[prop(optional, into)] is_small: MaybeProp<bool>,
-    #[prop(default = true.into(), into)] is_scaled: MaybeProp<bool>,
+    #[prop(optional, into)] is_large: MaybeSignal<bool>,
+    #[prop(optional, into)] is_medium: MaybeSignal<bool>,
+    #[prop(optional, into)] is_small: MaybeSignal<bool>,
+    #[prop(default = true.into(), into)] is_scaled: MaybeSignal<bool>,
     #[prop(optional, into)] class: TextProp,
     children: Children,
 ) -> impl IntoView {
@@ -27,10 +27,10 @@ pub fn BIcon(
 #[component]
 pub fn BIcon(
     #[prop(into)] icon: MaybeSignal<icondata_core::Icon>,
-    #[prop(optional, into)] is_large: MaybeProp<bool>,
-    #[prop(optional, into)] is_medium: MaybeProp<bool>,
-    #[prop(optional, into)] is_small: MaybeProp<bool>,
-    #[prop(default = true.into(), into)] is_scaled: MaybeProp<bool>,
+    #[prop(optional, into)] is_large: MaybeSignal<bool>,
+    #[prop(optional, into)] is_medium: MaybeSignal<bool>,
+    #[prop(optional, into)] is_small: MaybeSignal<bool>,
+    #[prop(default = true.into(), into)] is_scaled: MaybeSignal<bool>,
     #[prop(optional, into)] class: TextProp,
 ) -> impl IntoView {
     use leptos_icons::Icon;
@@ -52,10 +52,10 @@ pub fn BIcon(
 #[component]
 pub fn BIconText<F, IV>(
     #[prop(into)] icon: MaybeSignal<icondata_core::Icon>,
-    #[prop(optional, into)] is_large: MaybeProp<bool>,
-    #[prop(optional, into)] is_medium: MaybeProp<bool>,
-    #[prop(optional, into)] is_small: MaybeProp<bool>,
-    #[prop(default = true.into(), into)] is_scaled: MaybeProp<bool>,
+    #[prop(optional, into)] is_large: MaybeSignal<bool>,
+    #[prop(optional, into)] is_medium: MaybeSignal<bool>,
+    #[prop(optional, into)] is_small: MaybeSignal<bool>,
+    #[prop(default = true.into(), into)] is_scaled: MaybeSignal<bool>,
     #[prop(optional, into)] class: TextProp,
     #[prop(optional, into)] icon_class: TextProp,
     text: F,
@@ -82,10 +82,10 @@ where
 #[cfg(not(feature = "leptos-icons"))]
 #[component]
 pub fn BIconText<F, IV>(
-    #[prop(optional, into)] is_large: MaybeProp<bool>,
-    #[prop(optional, into)] is_medium: MaybeProp<bool>,
-    #[prop(optional, into)] is_small: MaybeProp<bool>,
-    #[prop(default = true.into(), into)] is_scaled: MaybeProp<bool>,
+    #[prop(optional, into)] is_large: MaybeSignal<bool>,
+    #[prop(optional, into)] is_medium: MaybeSignal<bool>,
+    #[prop(optional, into)] is_small: MaybeSignal<bool>,
+    #[prop(default = true.into(), into)] is_scaled: MaybeSignal<bool>,
     #[prop(optional, into)] class: TextProp,
     #[prop(optional, into)] icon_class: TextProp,
     text: F,

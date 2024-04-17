@@ -6,6 +6,7 @@
 
 - Optional prop `is_checked` on checkbox.
 - Icon Leptos components.
+- More props to dropdown Leptos component.
 
 ## [0.0.0-alpha.11] - 2024-04-13
 
