@@ -12,6 +12,7 @@ pub fn BCheckboxField(
     label: &'static str,
     #[prop(optional, into)] name: Option<&'static str>,
     #[prop(default = "true".into(), into)] value: MaybeSignal<String>,
+    #[prop(optional, into)] is_checked: MaybeSignal<bool>,
     #[prop(optional, into)] on_change: Option<EventFn>,
 ) -> impl IntoView {
     let error_text = create_rw_signal(None);
@@ -29,6 +30,7 @@ pub fn BCheckboxField(
         label,
         name,
         value,
+        is_checked,
         on_change,
         attributes: vec![],
     });
