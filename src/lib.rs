@@ -12,6 +12,12 @@ pub mod elements;
 pub mod form;
 pub mod layout;
 
+#[cfg(feature = "leptos-icons")]
+pub mod icons {
+    #[cfg(feature = "icondata-fa")]
+    pub use icondata_fa;
+}
+
 pub struct EventFn(Box<dyn Fn(Event) + 'static>);
 
 impl<T> From<T> for EventFn

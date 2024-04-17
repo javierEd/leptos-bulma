@@ -1,9 +1,42 @@
 use leptos::*;
-use leptos_icons::Icon;
 
 use crate::EventFn;
 
 use super::{BControl, BField, BHelp, BLabel};
+
+#[cfg(feature = "icondata-fa")]
+#[component]
+fn VisibilityIcon(is_visible: RwSignal<bool>) -> impl IntoView {
+    use crate::elements::BIcon;
+
+    let visibility_icon = create_rw_signal(icondata_fa::FaEyeSlashSolid);
+
+    create_effect(move |_| {
+        visibility_icon.set(if is_visible.get() {
+            icondata_fa::FaEyeSolid
+        } else {
+            icondata_fa::FaEyeSlashSolid
+        })
+    });
+
+    view! { <BIcon is_scaled=false icon=visibility_icon/> }
+}
+
+#[cfg(not(feature = "icondata-fa"))]
+#[component]
+fn VisibilityIcon(is_visible: RwSignal<bool>) -> impl IntoView {
+    let text_decoration = create_rw_signal("line-through");
+
+    create_effect(move |_| {
+        text_decoration.set(if is_visible.get() {
+            "none"
+        } else {
+            "line-through"
+        })
+    });
+
+    view! { <span style:text-decoration=text_decoration>"👁"</span> }
+}
 
 #[allow(unused_variables)]
 #[component]
@@ -51,14 +84,6 @@ pub fn BPasswordField(
         }
     };
 
-    let visibility_icon = move || {
-        if is_visible.get() {
-            view! { <Icon icon=icondata_fa::FaEyeSolid/> }
-        } else {
-            view! { <Icon icon=icondata_fa::FaEyeSlashSolid/> }
-        }
-    };
-
     let input_view = view! {
         <input node_ref=node_ref class=input_class id=id type=input_type name=name placeholder=placeholder value=value/>
     }
@@ -75,8 +100,8 @@ pub fn BPasswordField(
                 <BControl class="is-expanded">{input_view}</BControl>
 
                 <BControl>
-                    <a class=button_class on:click=move |_| { is_visible.update(|v| *v = !*v) }>
-                        <span class="icon">{visibility_icon}</span>
+                    <a class=button_class on:click=move |_| { is_visible.update(|value| *value = !*value) }>
+                        <VisibilityIcon is_visible=is_visible/>
                     </a>
                 </BControl>
             </BField>

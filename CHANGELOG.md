@@ -5,6 +5,7 @@
 ### Added
 
 - Optional prop `is_checked` on checkbox.
+- Icon Leptos components.
 
 ## [0.0.0-alpha.11] - 2024-04-13
 
@@ -24,18 +25,18 @@
 
 ## [0.0.0-alpha.9] - 2024-04-10
 
-# Added
+### Added
 
 - Optional callback when modal is closed.
 - Pagination Leptos component.
 - Columns page on the website;
 
-## Fixed
+### Fixed
 
 - Some navbar props.
 - Some columns and box props.
 
-## Removed
+### Removed
 
 - navbar markdown file.
 

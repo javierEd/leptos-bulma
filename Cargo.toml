@@ -21,14 +21,18 @@ publish = true
 
 [dependencies]
 grass = { version = "0.13", default-features = false }
-icondata_fa = "0.0"
+icondata_core = { version = "0.1", optional = true }
+icondata_fa = { version = "0.0", optional = true }
 leptos = "0.6"
-leptos_icons = "0.3"
+leptos_icons = { version = "0.3", optional = true }
 leptos_router = "0.6"
 leptos-use = "0.10"
 web-sys = "0.3"
 
 [features]
+default = ["icondata-fa"]
+leptos-icons = ["dep:icondata_core", "dep:leptos_icons"]
+icondata-fa = ["leptos-icons", "dep:icondata_fa"]
 ssr = ["leptos-use/ssr"]
 
 [profile.release]

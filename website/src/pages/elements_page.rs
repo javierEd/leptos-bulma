@@ -3,7 +3,7 @@ use leptos_bulma::elements::{BBlock, BTitle};
 use leptos_bulma::layout::BSection;
 
 use crate::components::{GoToBulmaIo, GoToDocsRs, PageTitle};
-use crate::examples::{BasicBlock, BasicBox, BasicTable, BasicTitle, RustCodeExample};
+use crate::examples::{BasicBlock, BasicBox, BasicIcon, BasicTable, BasicTitle, RustCodeExample};
 use crate::i18n::{t, use_i18n};
 
 #[component]
@@ -41,6 +41,20 @@ pub fn ElementsPage() -> impl IntoView {
             <BasicBox/>
 
             <GoToDocsRs path="elements/fn.BBox"/>
+        </BSection>
+
+        <BSection>
+            <BTitle is=4>"Icon"</BTitle>
+
+            <BBlock>"Example:"</BBlock>
+
+            <RustCodeExample name="basic_icon"/>
+
+            <BBlock>"See it in action:"</BBlock>
+
+            <BasicIcon/>
+
+            <GoToDocsRs path="elements/fn.BIcon"/>
         </BSection>
 
         <BSection>

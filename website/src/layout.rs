@@ -4,7 +4,8 @@ use leptos_bulma::components::{
     BDropdown, BDropdownItem, BNavbar, BNavbarBrand, BNavbarBurger, BNavbarEnd, BNavbarItem,
     BNavbarMenu, BNavbarStart,
 };
-use leptos_icons::Icon;
+use leptos_bulma::elements::BIcon;
+use leptos_bulma::icons::icondata_fa;
 
 use crate::i18n::{t, use_i18n, Locale};
 
@@ -49,9 +50,7 @@ pub fn Layout(children: Children) -> impl IntoView {
                         target="_blank"
                         title="GitHub"
                     >
-                        <span class="icon is-large">
-                            <Icon icon=icondata_fa::FaGithubBrands/>
-                        </span>
+                        <BIcon is_large=true icon=icondata_fa::FaGithubBrands/>
                     </a>
                 </BNavbarEnd>
             </BNavbarMenu>

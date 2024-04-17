@@ -19,7 +19,6 @@ leptos-bulma = { path = "../" }
 [dependencies]
 console_error_panic_hook = "0.1.7"
 http = "1.1.0"
-icondata_fa = "0.0.10"
 indoc = "2.0.5"
 leptos = "0.6.11"
 leptos-bulma = { path = "../" }
@@ -27,7 +26,6 @@ leptos_i18n = { version = "0.3.3", default-features = false, features = [
     "cookie",
     "yaml_files",
 ] }
-leptos_icons = "0.3.0"
 leptos_integration_utils = { version = "0.6.11", optional = true }
 leptos_meta = "0.6.11"
 leptos_router = "0.6.11"

@@ -447,9 +447,9 @@ checksum = "11157ac094ffbdde99aa67b23417ebdd801842852b500e395a45a9c0aac03e4a"
 
 [[package]]
 name = "encoding_rs"
-version = "0.8.33"
+version = "0.8.34"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7268b386296a025e474d5140678f75d6de9493ae55a5d709eeb9dd08149945e1"
+checksum = "b45de904aa0b010bce2ab45264d0631681847fa7b6f2eaa7dab7619943bc4f59"
 dependencies = [
  "cfg-if",
 ]
@@ -866,6 +866,7 @@ name = "leptos-bulma"
 version = "0.0.0-alpha.11"
 dependencies = [
  "grass",
+ "icondata_core",
  "icondata_fa",
  "leptos",
  "leptos-use",
@@ -2335,13 +2336,11 @@ version = "0.0.0-alpha.11"
 dependencies = [
  "console_error_panic_hook",
  "http 1.1.0",
- "icondata_fa",
  "indoc",
  "leptos",
  "leptos-bulma",
  "leptos-spin",
  "leptos_i18n",
- "leptos_icons",
  "leptos_integration_utils",
  "leptos_meta",
  "leptos_router",

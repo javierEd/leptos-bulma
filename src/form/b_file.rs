@@ -1,9 +1,22 @@
 use leptos::html::Input;
 use leptos::*;
-use leptos_icons::Icon;
 use web_sys::{Event, MouseEvent};
 
 use crate::EventFn;
+
+#[cfg(feature = "icondata-fa")]
+#[component]
+fn FileIcon() -> impl IntoView {
+    use leptos_icons::Icon;
+
+    view! { <Icon icon=icondata_fa::FaUploadSolid/> }
+}
+
+#[cfg(not(feature = "icondata-fa"))]
+#[component]
+fn FileIcon() -> impl IntoView {
+    "↥"
+}
 
 #[component]
 pub fn BFile(
@@ -77,7 +90,9 @@ pub fn BFile(
                 />
 
                 <span class="file-cta">
-                    <span class="file-icon is-medium"><Icon icon=icondata_fa::FaUploadSolid /></span>
+                    <span class="file-icon">
+                        <FileIcon/>
+                    </span>
                     <span class="file-label">{label}</span>
                 </span>
 

@@ -22,3 +22,8 @@
         border-top-right-radius: 0;
     }
 }
+
+.icon.is-scaled>svg {
+    height: 100%;
+    width: 100%;
+}
