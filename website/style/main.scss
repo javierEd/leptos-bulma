@@ -19,7 +19,21 @@ pre {
     padding: 3rem 1.5rem;
 }
 
-.pagination a.is-disabled {
-    pointer-events: none;
-    cursor: default;
+.loading-overlay {
+    background-color: #000;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    transition:
+        visibility 0s 0.3s,
+        background-color 0.3s;
+
+    &.is-done {
+        background-color: #0000;
+        opacity: 1;
+        visibility: hidden;
+    }
 }

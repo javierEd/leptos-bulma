@@ -11,6 +11,7 @@
 - Buttons Leptos component.
 - Button example on the website.
 - Toggle between light and dark themes on the website.
+- Show black overlay until website is loaded.
 
 ## [0.0.0-alpha.11] - 2024-04-13
 

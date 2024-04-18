@@ -27,3 +27,8 @@
     height: 100%;
     width: 100%;
 }
+
+.pagination a.is-disabled {
+    pointer-events: none;
+    cursor: default;
+}

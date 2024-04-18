@@ -125,6 +125,8 @@ pub fn App() -> impl IntoView {
         // sets the document title
         <Title text="Leptos Bulma - A Leptos component library based on Bulma CSS framework"/>
 
+        <div class="loading-overlay" class:is-done=move || leptos_dom::is_browser()></div>
+
         // content for this welcome page
         <Router>
             <Layout>
