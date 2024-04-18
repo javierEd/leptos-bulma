@@ -8,7 +8,7 @@ readme = "README.md"
 license = "MIT"
 categories = ["gui"]
 keywords = ["components", "leptos", "ui", "web"]
-version = "0.0.0-alpha.11"
+version = "0.0.0-alpha.12"
 edition = "2021"
 exclude = [
     ".editorconfig",

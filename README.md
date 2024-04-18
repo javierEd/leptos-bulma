@@ -24,6 +24,7 @@ And any suggestions are appreciated.
 - [x] Block
 - [x] Box
 - [x] Button
+- [x] Icon
 - [x] Notification
 - [x] Table
 - [x] Title
@@ -64,7 +65,7 @@ cargo add leptos-bulma
 Or add the following line to your `Cargo.toml` file:
 
 ```toml
-leptos-bulma = "0.0.0-alpha.11"
+leptos-bulma = "0.0.0-alpha.12"
 ```
 
 Then add the following code to your `build.rs` file:
