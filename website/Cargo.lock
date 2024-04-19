@@ -915,9 +915,9 @@ dependencies = [
 
 [[package]]
 name = "leptos-use"
-version = "0.10.7"
+version = "0.10.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9d6be6f1d02c3277f03a55c4a05ee5a069ea75ec5323c4415f6efed69cb5acea"
+checksum = "142106b99697d98577933e2ed97d1a6fece64a0c58c9314ae56bdf9ad0dcbb2c"
 dependencies = [
  "async-trait",
  "cfg-if",
@@ -926,9 +926,11 @@ dependencies = [
  "futures-util",
  "gloo-timers",
  "gloo-utils",
+ "http 1.1.0",
  "js-sys",
  "lazy_static",
  "leptos",
+ "leptos-spin",
  "paste",
  "thiserror",
  "wasm-bindgen",

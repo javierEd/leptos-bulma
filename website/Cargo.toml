@@ -30,7 +30,7 @@ leptos_integration_utils = { version = "0.6.11", optional = true }
 leptos_meta = "0.6.11"
 leptos_router = "0.6.11"
 leptos-spin = { version = "0.1.0", optional = true }
-leptos-use = "0.10.7"
+leptos-use = "0.10.8"
 serde = "1.0.198"
 slug = "0.1.5"
 spin-sdk = { version = "2.2.0", optional = true }
@@ -52,6 +52,7 @@ ssr = [
     "leptos_meta/ssr",
     "leptos_router/ssr",
     "leptos/spin",
+    "leptos-use/spin",
     "leptos-use/ssr",
     "dep:spin-sdk",
     "dep:leptos-spin",
