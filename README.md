@@ -56,16 +56,16 @@ And any suggestions are appreciated.
 
 ## How to install
 
-Run the following command to add the crate to your Leptos application:
-
-```sh
-cargo add leptos-bulma
-```
-
-Or add the following line to your `Cargo.toml` file:
+Add the following lines to your `Cargo.toml` file:
 
 ```toml
-leptos-bulma = "0.0.0-alpha.12"
+[build-dependencies]
+# ···
+leptos-bulma = { version = "0.0.0-alpha.13", default-features = false, features = ["build-script"] }
+
+[dependencies]
+# ···
+leptos-bulma = "0.0.0-alpha.13"
 ```
 
 Then add the following code to your `build.rs` file:
@@ -73,19 +73,18 @@ Then add the following code to your `build.rs` file:
 ```rust
 fn main() {
     // ···
-    leptos_bulma::LeptosBulma::build("./style");
-    // ···
+    leptos_bulma::build("./style");
 }
 ```
 
-Use `leptos-bulma.css` in your stylesheet:
+Use `leptos-bulma.scss` in your stylesheet:
 
 ```css
-@use "leptos-bulma.css";
+@use "leptos-bulma.scss";
 ```
 
-And finally, add `leptos-bulma.css` to your `.gitignore` file:
+And finally, add `leptos-bulma.scss` to your `.gitignore` file:
 
 ```
-/style/leptos-bulma.css
+/style/leptos-bulma.scss
 ```
