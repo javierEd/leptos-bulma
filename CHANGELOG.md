@@ -6,6 +6,7 @@
 
 - Upgrade `leptos-use` in the website to include Spin feature for `use_cookie`.
 - Replace theme context in the website with `leptos_use::use_color_mode`.
+- Build script to generate a SCSS file that allows Bulma variables.
 
 ### Fixed
 
@@ -14,6 +15,7 @@
 ### Removed
 
 - Custom `use_cookie` for SSR in the website.
+- `indoc` dependency from the website.
 
 ## [0.0.0-alpha.12] - 2024-04-17
 

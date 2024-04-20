@@ -3,4 +3,4 @@ target/
 .vscode
 .envrc
 .direnv
-/style/leptos-bulma.css
+/style/leptos-bulma.scss

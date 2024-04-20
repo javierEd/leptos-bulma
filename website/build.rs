@@ -1,3 +1,3 @@
 fn main() {
-    leptos_bulma::LeptosBulma::build("./style");
+    leptos_bulma::build("./style");
 }

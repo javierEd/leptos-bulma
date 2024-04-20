@@ -14,12 +14,13 @@ publish = false
 crate-type = ["cdylib"]
 
 [build-dependencies]
-leptos-bulma = { path = "../" }
+leptos-bulma = { path = "../", default-features = false, features = [
+    "build-script",
+] }
 
 [dependencies]
 console_error_panic_hook = "0.1.7"
 http = "1.1.0"
-indoc = "2.0.5"
 leptos = "0.6.11"
 leptos-bulma = { path = "../" }
 leptos_i18n = { version = "0.3.3", default-features = false, features = [

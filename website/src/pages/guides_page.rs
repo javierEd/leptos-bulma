@@ -1,5 +1,6 @@
-use indoc::indoc;
 use leptos::*;
+use leptos_bulma::elements::{BBlock, BTitle};
+use leptos_bulma::layout::BSection;
 
 use crate::components::{CodeBlock, PageTitle};
 use crate::i18n::{t, use_i18n};
@@ -8,44 +9,41 @@ use crate::i18n::{t, use_i18n};
 pub fn GuidesPage() -> impl IntoView {
     let i18n = use_i18n();
 
+    let cargo_pkg_version = env!("CARGO_PKG_VERSION");
+
+    let cargo_toml = "[build-dependencies]\n# ···\nleptos-bulma = { version = \"".to_owned()
+            + cargo_pkg_version
+            + "\", default-features = false, features = [\"build-script\"] }\n\n[dependencies]\n# ···\nleptos-bulma = \""
+            + cargo_pkg_version
+            + "\"";
+
+    let build_rs = "fn main() {\n    // ···\n    leptos_bulma::build(\"./style \");\n}";
+
     view! {
         <PageTitle text=t!(i18n, guides)/>
 
-        <h2 class="title is-3">{t!(i18n, guides)}</h2>
+        <BTitle is=3>{t!(i18n, guides)}</BTitle>
 
-        <section class="section">
-            <h3 class="title is-4">"How to install"</h3>
+        <BSection>
+            <BTitle is=4>"How to install"</BTitle>
 
-            <p class="block">"Run the following command to add the crate to your Leptos application:"</p>
+            <BBlock>"Add the following lines to your " <code>"Cargo.toml"</code> " file:"</BBlock>
 
-            <CodeBlock language="bash">"cargo add leptos-bulma"</CodeBlock>
+            <CodeBlock>{cargo_toml}</CodeBlock>
 
-            <p class="block">"Or add the following line to your " <code>"Cargo.toml"</code> " file:"</p>
+            <BBlock>"Then add the following code to your " <code>"build.rs"</code> " file:"</BBlock>
 
-            <CodeBlock>r#"leptos-bulma = ""# {env!("CARGO_PKG_VERSION")} r#"""#</CodeBlock>
+            <CodeBlock language="rust">{build_rs}</CodeBlock>
 
-            <p class="block">"Then add the following code to your " <code>"build.rs"</code> " file:"</p>
+            <BBlock>"Use " <code>"leptos-bulma.scss"</code> " in your stylesheet:"</BBlock>
 
-            <CodeBlock language="rust">
-                {indoc!(
-                    r#"fn main() {
-                    // ···
-                    leptos_bulma::LeptosBulma::build("./style");
-                    // ···
-                }"#
-                )}
+            <CodeBlock language="css">r#"@use "leptos-bulma.scss";"#</CodeBlock>
 
-            </CodeBlock>
+            <BBlock>
+                "And finally, add " <code>"leptos-bulma.scss"</code> " to your " <code>".gitignore"</code> " file:"
+            </BBlock>
 
-            <p class="block">"Use " <code>"leptos-bulma.css"</code> " in your stylesheet:"</p>
-
-            <CodeBlock language="css">r#"@use "leptos-bulma.css";"#</CodeBlock>
-
-            <p class="block">
-                "And finally, add " <code>"leptos-bulma.css"</code> " to your " <code>".gitignore"</code> " file:"
-            </p>
-
-            <CodeBlock>"/style/leptos-bulma.css"</CodeBlock>
-        </section>
+            <CodeBlock>"/style/leptos-bulma.scss"</CodeBlock>
+        </BSection>
     }
 }

@@ -1,10 +1,4 @@
-use std::fs::{create_dir_all, File};
-use std::io::Write;
-use std::path::Path;
-use std::process::Command;
-
 use leptos::ev::{Event, MouseEvent};
-use leptos::LeptosOptions;
 
 pub mod columns;
 pub mod components;
@@ -52,40 +46,45 @@ impl MouseEventFn {
     }
 }
 
-pub struct LeptosBulma;
+#[cfg(feature = "build-script")]
+pub fn build<P: AsRef<std::path::Path>>(output_dir: P) {
+    use std::fs::{create_dir_all, read_to_string, File};
+    use std::io::Write;
+    use std::path::{Component, Path};
+    use std::process::Command;
 
-impl LeptosBulma {
-    pub fn setup(leptos_options: &LeptosOptions) {
-        let output_dir = Path::new(&leptos_options.site_root).join(&leptos_options.site_pkg_dir);
-        Self::build(output_dir)
+    let output_dir = output_dir.as_ref();
+    let output_path = output_dir.join("leptos-bulma.scss");
+    let main_scss_path = Path::new(env!("CARGO_MANIFEST_DIR")).join("style/main.scss");
+
+    let _ = create_dir_all(output_dir);
+
+    let mut output_file = File::options()
+        .truncate(true)
+        .create(true)
+        .write(true)
+        .open(output_path)
+        .expect("Could not create output file");
+
+    Command::new("npm")
+        .args(["--prefix", "./target", "install", "bulma@1.0"])
+        .output()
+        .expect("Could not install Bulma");
+
+    let mut bulma_sass_prefix_dir = "".to_owned();
+
+    for _ in output_dir.components().filter(|c| c != &Component::CurDir) {
+        bulma_sass_prefix_dir += "../";
     }
 
-    pub fn build<P: AsRef<Path>>(output_dir: P) {
-        let output_path = output_dir.as_ref().join("leptos-bulma.css");
+    let use_bulma_sass = format!(
+        "@forward \"{}target/node_modules/bulma/sass\";\n\n",
+        bulma_sass_prefix_dir
+    );
+    let main_scss_content = read_to_string(main_scss_path).unwrap();
+    let output_file_content = use_bulma_sass + main_scss_content.as_str();
 
-        let _ = create_dir_all(output_dir);
-
-        let mut output_file = File::options()
-            .truncate(true)
-            .create(true)
-            .write(true)
-            .open(output_path)
-            .expect("Could not create output file");
-
-        let _ = Command::new("npm")
-            .args(["--prefix", "./target", "install", "bulma@1.0"])
-            .output();
-
-        let source_path = Path::new(env!("CARGO_MANIFEST_DIR")).join("style/main.scss");
-        let source_content = grass::from_path(
-            source_path,
-            &grass::Options::default()
-                .style(grass::OutputStyle::Compressed)
-                .load_path("./target/node_modules/bulma")
-                .allows_charset(true),
-        )
-        .unwrap();
-
-        output_file.write_all(source_content.as_bytes()).unwrap();
-    }
+    output_file
+        .write_all(output_file_content.as_bytes())
+        .expect("Could not write output file");
 }
