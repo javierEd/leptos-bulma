@@ -5,6 +5,7 @@
 ### Added
 
 - Add props `is_hoverable` and `href` to `BNavbarDropdownItem`.
+- Add prop `id` to `BTitle`.
 
 ## [0.0.0-alpha.13] - 2024-04-19
 

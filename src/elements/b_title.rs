@@ -4,23 +4,24 @@ use leptos::*;
 pub fn BTitle(
     children: Children,
     #[prop(optional, into)] class: TextProp,
+    #[prop(optional, into)] id: Option<TextProp>,
     #[prop(optional)] is: Option<i8>,
 ) -> impl IntoView {
     let title_class = move || {
-        let mut t_class = "title".to_owned();
-
-        if !class.get().is_empty() {
-            t_class.push_str(&format!(" {}", class.get()));
-        }
+        let mut t_class = format!("title {}", class.get());
 
         if let Some(is) = is {
-            t_class.push_str(&format!(" is-{}", is));
+            t_class += &format!(" is-{}", is);
         }
 
         t_class
     };
 
-    view! { <div class=title_class>{children()}</div> }
+    view! {
+        <div class=title_class id=id>
+            {children()}
+        </div>
+    }
 }
 
 #[component]
@@ -30,14 +31,10 @@ pub fn BSubtitle(
     #[prop(optional)] is: Option<i8>,
 ) -> impl IntoView {
     let subtitle_class = move || {
-        let mut s_class = "subtitle".to_owned();
-
-        if !class.get().is_empty() {
-            s_class.push_str(&format!(" {}", class.get()));
-        }
+        let mut s_class = format!("subtitle {}", class.get());
 
         if let Some(is) = is {
-            s_class.push_str(&format!(" is-{}", is));
+            s_class += &format!(" is-{}", is);
         }
 
         s_class
