@@ -62,6 +62,8 @@ pub fn BNavbarItem(
 pub fn BNavbarItemDropdown<F, IV>(
     children: Children,
     #[prop(optional, into)] dropdown_class: TextProp,
+    #[prop(optional, into)] href: Option<TextProp>,
+    #[prop(optional, into)] is_hoverable: MaybeSignal<bool>,
     trigger: F,
 ) -> impl IntoView
 where
@@ -69,20 +71,31 @@ where
     IV: IntoView,
 {
     let node_ref = create_node_ref::<Div>();
-    let (is_active, set_is_active) = create_signal(false);
+    let is_active = create_rw_signal(false);
 
     let _ = leptos_use::on_click_outside(node_ref, move |_| {
-        set_is_active.set(false);
+        is_active.set(false);
     });
+
+    let toggle_dropdown = move |_| {
+        if is_hoverable.get() {
+            is_active.set(false);
+        } else {
+            is_active.update(|value| *value = !*value);
+        }
+    };
 
     view! {
         <div
             node_ref=node_ref
             class="navbar-item has-dropdown"
             class:is-active=is_active
-            on:click=move |_| { set_is_active.update(|v| *v = !*v) }
+            class:is-hoverable=is_hoverable
+            on:click=toggle_dropdown
         >
-            <a class="navbar-link">{trigger()}</a>
+            <a class="navbar-link" href=href>
+                {trigger()}
+            </a>
 
             <div class=format!("navbar-dropdown {}", dropdown_class.get())>{children()}</div>
         </div>
