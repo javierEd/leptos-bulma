@@ -84,6 +84,7 @@ pub fn Layout(children: Children) -> impl IntoView {
                         <BNavbarItem href="/guides#how-to-install-csr">
                             {t!(i18n, how_to_install_in_leptos_csr)}
                         </BNavbarItem>
+                        <BNavbarItem href="/guides#customization">{t!(i18n, customization)}</BNavbarItem>
                     </BNavbarItemDropdown>
                     <BNavbarItem href="/elements">{t!(i18n, elements)}</BNavbarItem>
                     <BNavbarItem href="/components">{t!(i18n, components)}</BNavbarItem>

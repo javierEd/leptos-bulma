@@ -28,9 +28,16 @@ pub fn GuidesPage() -> impl IntoView {
         + "<!-- Since you added another binary, you should modify the following line and add the default target name -->\n"
         + r#"<link data-trunk rel="rust" data-wasm-opt="z" data-weak-refs data-target-name="<PACKAGE-NAME>"/>"#;
 
-    let trunk_toml = "[watch]\n# ···\nignore = [\"style\"]\n\n[[hooks]]\nstage = \"pre_build\"\n".to_owned()
-        + r#"command = "cargo""# + "\n"
+    let trunk_toml = "[watch]\n# ···\nignore = [\"style\"]\n\n[[hooks]]\nstage = \"pre_build\"\n"
+        .to_owned()
+        + r#"command = "cargo""#
+        + "\n"
         + r#"command_arguments = ["run", "--bin", "build-leptos-bulma"]"#;
+
+    let customize_sass = "// Set your brand colors\n$purple: #8a4d76;\n$pink: #fa7c91;\n$brown: #757763;\n".to_owned()
+        + "$beige-light: #d0d1cd;\n$beige-lighter: #eff0eb;\n\n@use \"leptos-bulma.scss\" with (\n"
+        + "    $grey-dark: $brown,\n    $grey-light: $beige-light,\n    $primary: $purple,\n    $link: $pink,\n"
+        + "    $control-border-width: 2px,\n    $input-shadow: none\n);";
 
     view! {
         <PageTitle text=t!(i18n, guides)/>
@@ -117,6 +124,30 @@ pub fn GuidesPage() -> impl IntoView {
             </BBlock>
 
             <CodeBlock>"/style/leptos-bulma.scss"</CodeBlock>
+        </BSection>
+
+        <BSection>
+            <BTitle id="customization" is=4>
+                {t!(i18n, customization)}
+            </BTitle>
+
+            <BTitle id="customization" is=5>
+                "Customize with Sass"
+            </BTitle>
+
+            <BBlock>
+                "You can overwrite Bulma’s Sass variables with your own values by using the " <code>"with"</code>
+                " in your stylesheet:"
+            </BBlock>
+
+            <CodeBlock language="scss">{customize_sass}</CodeBlock>
+
+            <BBlock>
+                "To check the available variables, go to: "
+                <a href="https://bulma.io/documentation/customize/list-of-sass-variables" target="_blank">
+                    "bulma.io/documentation/customize/list-of-sass-variables"
+                </a> "."
+            </BBlock>
         </BSection>
     }
 }
