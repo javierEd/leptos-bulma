@@ -2,7 +2,7 @@ use leptos::*;
 use leptos_bulma::columns::{BColumn, BColumns};
 use leptos_bulma::components::{
     BDropdown, BDropdownItem, BNavbar, BNavbarBrand, BNavbarBurger, BNavbarEnd, BNavbarItem,
-    BNavbarMenu, BNavbarStart,
+    BNavbarItemDropdown, BNavbarMenu, BNavbarStart,
 };
 use leptos_bulma::elements::{BButton, BButtons, BIcon};
 use leptos_bulma::icons::icondata_fa;
@@ -77,7 +77,14 @@ pub fn Layout(children: Children) -> impl IntoView {
             <BNavbarMenu is_active=burger_is_active>
                 <BNavbarStart>
                     <BNavbarItem href="/">{t!(i18n, home)}</BNavbarItem>
-                    <BNavbarItem href="/guides">{t!(i18n, guides)}</BNavbarItem>
+                    <BNavbarItemDropdown is_hoverable=true href="/guides" trigger=move || t!(i18n, guides)>
+                        <BNavbarItem href="/guides#how-to-install-ssr">
+                            {t!(i18n, how_to_install_in_leptos_ssr)}
+                        </BNavbarItem>
+                        <BNavbarItem href="/guides#how-to-install-csr">
+                            {t!(i18n, how_to_install_in_leptos_csr)}
+                        </BNavbarItem>
+                    </BNavbarItemDropdown>
                     <BNavbarItem href="/elements">{t!(i18n, elements)}</BNavbarItem>
                     <BNavbarItem href="/components">{t!(i18n, components)}</BNavbarItem>
                     <BNavbarItem href="/form">{t!(i18n, form)}</BNavbarItem>

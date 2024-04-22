@@ -47,7 +47,7 @@ pub fn App() -> impl IntoView {
         <div class="loading-overlay" class:is-done=leptos_dom::is_browser></div>
 
         // content for this welcome page
-        <Router>
+        <Router trailing_slash=TrailingSlash::Redirect>
             <Layout>
                 <Routes>
                     <Route path="/columns" view=ColumnsPage/>

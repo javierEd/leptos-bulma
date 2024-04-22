@@ -6,6 +6,8 @@ elements: Elementos
 form: Formulario
 guides: Guias
 home: Inicio
+how_to_install_in_leptos_csr: Como instalar en Leptos CSR
+how_to_install_in_leptos_ssr: Como instalar en Leptos SSR
 layout: Layout
 this_website_was_made_with: Este sitio web fue hecho con
 to_find_more_information_you_can_go_to: Para encontrar más información, puedes ir a
