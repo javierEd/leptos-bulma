@@ -2,6 +2,10 @@
 
 @import url("https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github-dark-dimmed.min.css");
 
+:root {
+    --bulma-body-background-color: var(--bulma-scheme-main-ter);
+}
+
 main.container {
     min-height: calc(100vh - 280px);
 }
@@ -12,12 +16,30 @@ pre {
     max-height: 250px;
 }
 
-.navbar-brand img {
-    max-height: unset;
+.navbar-brand {
+    img {
+        max-height: unset;
+    }
+
+    @media screen and (max-width: 768px) {
+        .media-content {
+            overflow-x: unset;
+        }
+    }
 }
 
 .footer {
-    padding: 3rem 1.5rem;
+    --bulma-footer-padding: 3rem 1.5rem;
+}
+
+.hljs {
+    background: #42474e;
+}
+
+[data-theme="dark"] {
+    .hljs {
+        background: #292e35;
+    }
 }
 
 .loading-overlay {

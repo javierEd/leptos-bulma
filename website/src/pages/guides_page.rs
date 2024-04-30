@@ -13,11 +13,11 @@ pub fn GuidesPage() -> impl IntoView {
 
     let ssr_cargo_toml = "[build-dependencies]\n# ···\nleptos-bulma = { version = \"".to_owned()
         + cargo_pkg_version
-        + ", default-features = false, features = [\"build-script\"] }\n\n[dependencies]\n# ···\nleptos-bulma = \""
+        + "\", default-features = false, features = [\"build-script\"] }\n\n[dependencies]\n# ···\nleptos-bulma = \""
         + cargo_pkg_version
-        + "\"";
+        + "\"\n\n[features]\n# ···\nssr = [\n    # ···\n    \"leptos-bulma/ssr\"\n]";
 
-    let build_rs = "fn main() {\n    // ···\n    leptos_bulma::build(\"./style \");\n}";
+    let build_rs = "fn main() {\n    // ···\n    leptos_bulma::build(\"./style\");\n}";
 
     let csr_cargo_toml = "[dependencies]\n# ···\nleptos-bulma = { version = \"".to_owned()
         + cargo_pkg_version
@@ -61,7 +61,7 @@ pub fn GuidesPage() -> impl IntoView {
                 </a>
             </BBlock>
 
-            <BBlock>"Add the following line to your " <code>"Cargo.toml"</code> " file:"</BBlock>
+            <BBlock>"Add the following lines to your " <code>"Cargo.toml"</code> " file:"</BBlock>
 
             <CodeBlock>{ssr_cargo_toml}</CodeBlock>
 
@@ -93,7 +93,7 @@ pub fn GuidesPage() -> impl IntoView {
                 </a>
             </BBlock>
 
-            <BBlock>"Add the following lines to your " <code>"Cargo.toml"</code> " file:"</BBlock>
+            <BBlock>"Add the following line to your " <code>"Cargo.toml"</code> " file:"</BBlock>
 
             <CodeBlock>{csr_cargo_toml}</CodeBlock>
 

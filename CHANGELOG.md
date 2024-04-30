@@ -1,13 +1,19 @@
 # Changelog
 
+## [Unreleased]
+
+### Fixed
+
+- Apply some corrections and style improvements on the website.
+
 ## [0.0.0] - 2024-04-22
 
 ### Added
 
-- Add props `is_hoverable` and `href` to `BNavbarDropdownItem`.
-- Add prop `id` to `BTitle`.
-- Add installation guide for Leptos CSR on the website.
-- Add customization with Sass section on the website.
+- Props `is_hoverable` and `href` to `BNavbarDropdownItem`.
+- Prop `id` to `BTitle`.
+- Installation guide for Leptos CSR on the website.
+- Customization with Sass section on the website.
 
 ## [0.0.0-alpha.13] - 2024-04-19
 
