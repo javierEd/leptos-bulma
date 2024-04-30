@@ -23,18 +23,18 @@ pub use b_textarea::*;
 pub use b_textarea_field::*;
 
 #[component]
-pub fn BControl(#[prop(default = "")] class: &'static str, children: Children) -> impl IntoView {
-    view! { <div class=format!("control {}", class)>{children()}</div> }
+pub fn BControl(#[prop(optional, into)] class: TextProp, children: Children) -> impl IntoView {
+    view! { <div class=format!("control {}", class.get())>{children()}</div> }
 }
 
 #[component]
-pub fn BField(#[prop(default = "")] class: &'static str, children: Children) -> impl IntoView {
-    view! { <div class=format!("field {}", class)>{children()}</div> }
+pub fn BField(#[prop(optional, into)] class: TextProp, children: Children) -> impl IntoView {
+    view! { <div class=format!("field {}", class.get())>{children()}</div> }
 }
 
 #[component]
-pub fn BHelp(#[prop(default = "")] class: &'static str, children: Children) -> impl IntoView {
-    view! { <div class=format!("help {}", class)>{children()}</div> }
+pub fn BHelp(#[prop(optional, into)] class: TextProp, children: Children) -> impl IntoView {
+    view! { <div class=format!("help {}", class.get())>{children()}</div> }
 }
 
 #[component]

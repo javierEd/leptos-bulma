@@ -1,23 +1,23 @@
 use leptos::*;
 
 #[component]
-pub fn BAsideMenu(children: Children, #[prop(default = "")] class: &'static str) -> impl IntoView {
-    view! { <aside class=format!("menu {}", class)>{children()}</aside> }
+pub fn BAsideMenu(children: Children, #[prop(optional, into)] class: TextProp) -> impl IntoView {
+    view! { <aside class=format!("menu {}", class.get())>{children()}</aside> }
 }
 
 #[component]
-pub fn BMenu(children: Children, #[prop(default = "")] class: &'static str) -> impl IntoView {
-    view! { <div class=format!("menu {}", class)>{children()}</div> }
+pub fn BMenu(children: Children, #[prop(optional, into)] class: TextProp) -> impl IntoView {
+    view! { <div class=format!("menu {}", class.get())>{children()}</div> }
 }
 
 #[component]
-pub fn BMenuLabel(children: Children, #[prop(default = "")] class: &'static str) -> impl IntoView {
-    view! { <div class=format!("menu-label {}", class)>{children()}</div> }
+pub fn BMenuLabel(children: Children, #[prop(optional, into)] class: TextProp) -> impl IntoView {
+    view! { <div class=format!("menu-label {}", class.get())>{children()}</div> }
 }
 
 #[component]
-pub fn BMenuList(children: Children, #[prop(default = "")] class: &'static str) -> impl IntoView {
-    view! { <ul class=format!("menu-list {}", class)>{children()}</ul> }
+pub fn BMenuList(children: Children, #[prop(optional, into)] class: TextProp) -> impl IntoView {
+    view! { <ul class=format!("menu-list {}", class.get())>{children()}</ul> }
 }
 
 #[component]
@@ -26,5 +26,11 @@ pub fn BMenuLink(
     #[prop(optional, into)] class: TextProp,
     #[prop(optional, into)] href: TextProp,
 ) -> impl IntoView {
-    view! { <li><a active_class="is-active" class=class exact=true href=href>{children()}</a></li> }
+    view! {
+        <li>
+            <a active_class="is-active" class=class exact=true href=href>
+                {children()}
+            </a>
+        </li>
+    }
 }

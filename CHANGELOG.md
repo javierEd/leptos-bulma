@@ -5,6 +5,7 @@
 ### Fixed
 
 - Apply some corrections and style improvements on the website.
+- All props `class` should be `TextProp`.
 
 ## [0.0.0] - 2024-04-22
 
