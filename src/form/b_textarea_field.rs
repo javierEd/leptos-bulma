@@ -34,11 +34,11 @@ pub fn BTextareaField(
             </Show>
 
             <BControl class="is-expanded">
-                <textarea class=textarea_class id=id name=name placeholder=placeholder prop:value=value />
+                <textarea class=textarea_class id=id name=name placeholder=placeholder prop:value=value></textarea>
             </BControl>
 
             <Show when=has_error>
-                <BHelp class="is-danger">{error_text.get()}</BHelp>
+                <BHelp class="is-danger">{move || error_text.get()}</BHelp>
             </Show>
         </BField>
     }

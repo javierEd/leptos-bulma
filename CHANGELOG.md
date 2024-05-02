@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+### Fixed
+
+- Leptos warning when getting field errors.
+
 ## [0.0.1] - 2024-04-29
 
 ### Fixed

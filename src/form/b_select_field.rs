@@ -73,7 +73,7 @@ pub fn BSelectField(
             </BControl>
 
             <Show when=has_error>
-                <BHelp class="is-danger">{error_text.get()}</BHelp>
+                <BHelp class="is-danger">{move || error_text.get()}</BHelp>
             </Show>
         </BField>
     }
