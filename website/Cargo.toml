@@ -6,7 +6,7 @@ homepage = "https://leptos-bulma.fermyon.app "
 repository = "https://github.com/javierEd/leptos-bulma.git"
 readme = "README.md"
 license = "MIT"
-version = "0.0.1"
+version = "0.1.0"
 edition = "2021"
 publish = false
 
