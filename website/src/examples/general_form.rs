@@ -41,12 +41,14 @@ fn validate_required_select(node_ref: NodeRef<Select>, error: RwSignal<Option<St
 
 #[component]
 pub fn GeneralForm() -> impl IntoView {
+    let node_ref_username = create_node_ref::<Input>();
     let node_ref_first_name = create_node_ref::<Input>();
     let node_ref_slug = create_node_ref::<Input>();
     let node_ref_email = create_node_ref::<Input>();
     let node_ref_password = create_node_ref::<Input>();
     let node_ref_country = create_node_ref::<Select>();
     let node_ref_accept_terms = create_node_ref::<Input>();
+    let error_username = create_rw_signal(None);
     let error_first_name = create_rw_signal(None);
     let error_slug = create_rw_signal(None);
     let error_email = create_rw_signal(None);
@@ -63,7 +65,8 @@ pub fn GeneralForm() -> impl IntoView {
     let form_on_submit = move |event: SubmitEvent| {
         event.prevent_default();
 
-        let is_valid = validate_required_input(node_ref_first_name, error_first_name)
+        let is_valid = validate_required_input(node_ref_username, error_username)
+            & validate_required_input(node_ref_first_name, error_first_name)
             & validate_required_input(node_ref_slug, error_slug)
             & validate_required_input(node_ref_email, error_email)
             & validate_required_input(node_ref_password, error_password)
@@ -77,6 +80,16 @@ pub fn GeneralForm() -> impl IntoView {
 
     view! {
         <form on:submit=form_on_submit class="block" attr:autocomplete="off" attr:novalidate="true">
+            <BTextField
+                node_ref=node_ref_username
+                label="* Username"
+                error=error_username
+                addon_left=move || view! { <a class="button is-static">"@"</a> }
+                on_input=move |_| {
+                    validate_required_input(node_ref_username, error_username);
+                }
+            />
+
             <BTextField
                 node_ref=node_ref_first_name
                 label="* First name"

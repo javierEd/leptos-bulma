@@ -17,12 +17,26 @@ pub fn BTextField(
     #[prop(optional, into)] value: MaybeSignal<String>,
     #[prop(optional, into)] on_change: Option<EventFn>,
     #[prop(optional, into)] on_input: Option<EventFn>,
+    #[prop(optional, into)] addon_left: Option<ViewFn>,
+    #[prop(optional, into)] addon_right: Option<ViewFn>,
 ) -> impl IntoView {
     let error_text = create_rw_signal(None);
 
     create_effect(move |_| {
         error_text.set(error.get().map(|e| e.trim().to_owned()));
     });
+
+    let addon_left_view =
+        addon_left.map(|addon_left| view! { <BControl>{addon_left.run()}</BControl> });
+
+    let addon_right_view =
+        addon_right.map(|addon_right| view! { <BControl>{addon_right.run()}</BControl> });
+
+    let field_class = if addon_left_view.is_some() || addon_right_view.is_some() {
+        "has-addons"
+    } else {
+        ""
+    };
 
     let has_error = move || error_text.get().is_some();
 
@@ -46,7 +60,9 @@ pub fn BTextField(
                 <BLabel for_id=id>{label.unwrap()}</BLabel>
             </Show>
 
-            <BControl class="is-expanded">{input_view}</BControl>
+            <BField class=field_class>
+                {addon_left_view} <BControl class="is-expanded">{input_view}</BControl> {addon_right_view}
+            </BField>
 
             <Show when=has_error>
                 <BHelp class="is-danger">{move || error_text.get()}</BHelp>

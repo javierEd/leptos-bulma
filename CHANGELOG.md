@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- Props for addons to `BTextField`.
+
 ### Fixed
 
 - Leptos warning when getting field errors.
