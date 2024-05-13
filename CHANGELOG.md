@@ -9,6 +9,10 @@
 - More examples for buttons on the website.
 - Anchor link button (`BAButton`).
 
+### Changed
+
+- Upgrade some dependencies on the website.
+
 ### Fixed
 
 - Prop `class` on `BButton` and `BButtons` to avoid disabling other props on change.
