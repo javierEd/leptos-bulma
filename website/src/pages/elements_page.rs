@@ -47,7 +47,9 @@ pub fn ElementsPage() -> impl IntoView {
         </BSection>
 
         <BSection>
-            <BTitle is=4>"Button"</BTitle>
+            <BTitle id="button" is=4>
+                "Button"
+            </BTitle>
 
             <BBlock>"Basic example:"</BBlock>
 

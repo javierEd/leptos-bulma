@@ -2,6 +2,109 @@ use leptos::*;
 
 use crate::enums::{BColor, BSize, BState};
 
+fn get_button_class_list(
+    class: Oco<'static, str>,
+    color: BColor,
+    size: BSize,
+    state: BState,
+    is_dark: bool,
+    is_fullwidth: bool,
+    is_inverted: bool,
+    is_light: bool,
+    is_outlined: bool,
+    is_responsive: bool,
+    is_rounded: bool,
+) -> String {
+    let mut class_list = "button".to_owned();
+
+    if color != BColor::Default {
+        class_list += &format!(" is-{}", String::from(color))
+    };
+
+    if size != BSize::Default {
+        class_list += &format!(" is-{}", String::from(size))
+    };
+
+    if ![BState::Default, BState::Disabled].contains(&state) {
+        class_list += &format!(" is-{}", String::from(state))
+    };
+
+    if is_dark {
+        class_list += " is-dark";
+    }
+
+    if is_fullwidth {
+        class_list += " is-fullwidth";
+    }
+
+    if is_inverted {
+        class_list += " is-inverted";
+    }
+
+    if is_light {
+        class_list += " is-light";
+    }
+
+    if is_outlined {
+        class_list += " is-outlined";
+    }
+
+    if is_responsive {
+        class_list += " is-responsive";
+    }
+
+    if is_rounded {
+        class_list += " is-rounded";
+    }
+
+    if !class.is_empty() {
+        class_list += &format!(" {}", class);
+    }
+
+    class_list
+}
+
+#[component]
+pub fn BAButton(
+    children: Children,
+    #[prop(optional, into)] class: TextProp,
+    #[prop(default = BColor::Default.into(), into)] color: MaybeSignal<BColor>,
+    #[prop(default = BSize::Default.into(), into)] size: MaybeSignal<BSize>,
+    #[prop(default = BState::Default.into(), into)] state: MaybeSignal<BState>,
+    #[prop(optional, into)] is_dark: MaybeSignal<bool>,
+    #[prop(optional, into)] is_fullwidth: MaybeSignal<bool>,
+    #[prop(optional, into)] is_inverted: MaybeSignal<bool>,
+    #[prop(optional, into)] is_light: MaybeSignal<bool>,
+    #[prop(optional, into)] is_outlined: MaybeSignal<bool>,
+    #[prop(optional, into)] is_responsive: MaybeSignal<bool>,
+    #[prop(optional, into)] is_rounded: MaybeSignal<bool>,
+    #[prop(optional, into)] href: Option<TextProp>,
+    #[prop(optional, into)] target: Option<TextProp>,
+    #[prop(optional, into)] title: Option<TextProp>,
+) -> impl IntoView {
+    let button_class_list = move || {
+        get_button_class_list(
+            class.get(),
+            color.get(),
+            size.get(),
+            state.get(),
+            is_dark.get(),
+            is_fullwidth.get(),
+            is_inverted.get(),
+            is_light.get(),
+            is_outlined.get(),
+            is_responsive.get(),
+            is_rounded.get(),
+        )
+    };
+
+    view! {
+        <a class=button_class_list href=href target=target title=title disabled=move || state.get() == BState::Disabled>
+            {children()}
+        </a>
+    }
+}
+
 #[component]
 pub fn BButton(
     #[prop(optional, into)] button_type: Option<AttributeValue>,
@@ -17,56 +120,22 @@ pub fn BButton(
     #[prop(optional, into)] is_outlined: MaybeSignal<bool>,
     #[prop(optional, into)] is_responsive: MaybeSignal<bool>,
     #[prop(optional, into)] is_rounded: MaybeSignal<bool>,
-    #[prop(optional, into)] title: TextProp,
+    #[prop(optional, into)] title: Option<TextProp>,
 ) -> impl IntoView {
     let button_class_list = move || {
-        let mut class_list = "button".to_owned();
-
-        if color.get() != BColor::Default {
-            class_list += &format!(" is-{}", String::from(color.get()))
-        };
-
-        if size.get() != BSize::Default {
-            class_list += &format!(" is-{}", String::from(size.get()))
-        };
-
-        if ![BState::Default, BState::Disabled].contains(&state.get()) {
-            class_list += &format!(" is-{}", String::from(state.get()))
-        };
-
-        if is_dark.get() {
-            class_list += " is-dark";
-        }
-
-        if is_fullwidth.get() {
-            class_list += " is-fullwidth";
-        }
-
-        if is_inverted.get() {
-            class_list += " is-inverted";
-        }
-
-        if is_light.get() {
-            class_list += " is-light";
-        }
-
-        if is_outlined.get() {
-            class_list += " is-outlined";
-        }
-
-        if is_responsive.get() {
-            class_list += " is-responsive";
-        }
-
-        if is_rounded.get() {
-            class_list += " is-rounded";
-        }
-
-        if !class.get().is_empty() {
-            class_list += &format!(" {}", class.get());
-        }
-
-        class_list
+        get_button_class_list(
+            class.get(),
+            color.get(),
+            size.get(),
+            state.get(),
+            is_dark.get(),
+            is_fullwidth.get(),
+            is_inverted.get(),
+            is_light.get(),
+            is_outlined.get(),
+            is_responsive.get(),
+            is_rounded.get(),
+        )
     };
 
     view! {

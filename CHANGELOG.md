@@ -7,6 +7,7 @@
 - Enums for colors, states and sizes.
 - More props to `BButton` and `BButtons`.
 - More examples for buttons on the website.
+- Anchor link button (`BAButton`).
 
 ### Fixed
 
