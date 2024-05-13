@@ -2228,6 +2228,7 @@ version = "0.1.0"
 dependencies = [
  "console_error_panic_hook",
  "http 1.1.0",
+ "icondata_core",
  "leptos",
  "leptos-bulma",
  "leptos-spin",

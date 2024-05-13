@@ -1,5 +1,17 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+- Enums for colors, states and sizes.
+- More props to `BButton` and `BButtons`.
+- More examples for buttons on the website.
+
+### Fixed
+
+- Prop `class` on `BButton` and `BButtons` to avoid disabling other props on change.
+
 ## [0.1.0] - 2024-05-02
 
 ### Added

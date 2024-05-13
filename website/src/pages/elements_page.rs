@@ -4,7 +4,8 @@ use leptos_bulma::layout::BSection;
 
 use crate::components::{GoToBulmaIo, GoToDocsRs, PageTitle};
 use crate::examples::{
-    BasicBlock, BasicBox, BasicButton, BasicIcon, BasicTable, BasicTitle, RustCodeExample,
+    BasicBlock, BasicBox, BasicButtons, BasicIcon, BasicTable, BasicTitle, ButtonColors,
+    ButtonSizes, ButtonStates, RustCodeExample,
 };
 use crate::i18n::{t, use_i18n};
 
@@ -48,13 +49,43 @@ pub fn ElementsPage() -> impl IntoView {
         <BSection>
             <BTitle is=4>"Button"</BTitle>
 
-            <BBlock>"Example:"</BBlock>
+            <BBlock>"Basic example:"</BBlock>
 
-            <RustCodeExample name="basic_button"/>
+            <RustCodeExample name="basic_buttons"/>
 
             <BBlock>"See it in action:"</BBlock>
 
-            <BasicButton/>
+            <BasicButtons/>
+
+            <BTitle is=5>"Colors"</BTitle>
+
+            <BBlock>"Example:"</BBlock>
+
+            <RustCodeExample name="button_colors"/>
+
+            <BBlock>"See it in action:"</BBlock>
+
+            <ButtonColors/>
+
+            <BTitle is=5>"Sizes"</BTitle>
+
+            <BBlock>"Example:"</BBlock>
+
+            <RustCodeExample name="button_sizes"/>
+
+            <BBlock>"See it in action:"</BBlock>
+
+            <ButtonSizes/>
+
+            <BTitle is=5>"States"</BTitle>
+
+            <BBlock>"Example:"</BBlock>
+
+            <RustCodeExample name="button_states"/>
+
+            <BBlock>"See it in action:"</BBlock>
+
+            <ButtonStates/>
 
             <GoToDocsRs path="elements/fn.BButton"/>
         </BSection>

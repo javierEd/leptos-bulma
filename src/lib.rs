@@ -3,6 +3,7 @@ use leptos::ev::{Event, MouseEvent};
 pub mod columns;
 pub mod components;
 pub mod elements;
+pub mod enums;
 pub mod form;
 pub mod layout;
 

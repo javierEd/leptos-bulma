@@ -7,7 +7,7 @@ use crate::components::CodeBlock;
 
 mod basic_block;
 mod basic_box;
-mod basic_button;
+mod basic_buttons;
 mod basic_columns;
 mod basic_dropdown;
 mod basic_icon;
@@ -17,11 +17,14 @@ mod basic_pagination;
 mod basic_section;
 mod basic_table;
 mod basic_title;
+mod button_colors;
+mod button_sizes;
+mod button_states;
 mod general_form;
 
 pub use basic_block::BasicBlock;
 pub use basic_box::BasicBox;
-pub use basic_button::BasicButton;
+pub use basic_buttons::BasicButtons;
 pub use basic_columns::BasicColumns;
 pub use basic_dropdown::BasicDropdown;
 pub use basic_icon::BasicIcon;
@@ -31,6 +34,9 @@ pub use basic_pagination::BasicPagination;
 pub use basic_section::BasicSection;
 pub use basic_table::BasicTable;
 pub use basic_title::BasicTitle;
+pub use button_colors::ButtonColors;
+pub use button_sizes::ButtonSizes;
+pub use button_states::ButtonStates;
 pub use general_form::GeneralForm;
 
 async fn get_code_example(name: &'static str) -> Result<String, JsValue> {
