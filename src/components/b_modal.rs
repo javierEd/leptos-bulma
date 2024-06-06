@@ -3,7 +3,7 @@ use leptos::*;
 
 #[component]
 pub fn BModal(
-    children: ChildrenFn,
+    children: Children,
     #[prop(default = true)] has_background: bool,
     #[prop(default = true)] has_close_button: bool,
     #[prop(default = true)] is_dismissible: bool,
@@ -19,26 +19,24 @@ pub fn BModal(
     };
 
     view! {
-        <Show when=move || is_active.get()>
-            <div class="modal is-active">
-                <Show when=move || has_background>
-                    <div
-                        class="modal-background"
-                        on:click=move |event| {
-                            if is_dismissible {
-                                close_modal(event);
-                            }
+        <div class="modal" class:is-active=is_active>
+            <Show when=move || has_background>
+                <div
+                    class="modal-background"
+                    on:click=move |event| {
+                        if is_dismissible {
+                            close_modal(event);
                         }
-                    >
-                    </div>
-                </Show>
-                {children()}
+                    }
+                >
+                </div>
+            </Show>
+            {children()}
 
-                <Show when=move || has_close_button>
-                    <BModalClose on:click=close_modal/>
-                </Show>
-            </div>
-        </Show>
+            <Show when=move || has_close_button>
+                <BModalClose on:click=close_modal/>
+            </Show>
+        </div>
     }
 }
 

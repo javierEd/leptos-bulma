@@ -2,10 +2,14 @@
 
 ## [Unreleased]
 
-## Added
+### Added
 
 - Tag element (`BTag` and `Btags`).
 - Breadcrumb component (`BBreadcrumb` `BBreadcrumbItem`).
+
+### Changed
+
+- Use class `is-active` in `BModal` to show it.
 
 ## [0.2.0] - 2024-05-13
 
