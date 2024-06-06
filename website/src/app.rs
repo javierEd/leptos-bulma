@@ -54,6 +54,7 @@ pub fn App() -> impl IntoView {
                     <Route path="/components" view=ComponentsPage/>
                     <Route path="/components/breadcrumb" view=components::BreadcrumbPage/>
                     <Route path="/elements" view=ElementsPage/>
+                    <Route path="/elements/button" view=elements::ButtonPage/>
                     <Route path="/elements/tag" view=elements::TagPage/>
                     <Route path="/form" view=FormPage/>
                     <Route path="/guides" view=GuidesPage/>

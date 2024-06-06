@@ -10,6 +10,7 @@
 ### Changed
 
 - Use class `is-active` in `BModal` to show it.
+- Move button element to their own page on the website.
 
 ## [0.2.0] - 2024-05-13
 

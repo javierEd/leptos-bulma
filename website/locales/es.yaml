@@ -19,6 +19,7 @@ how_to_install_in_leptos_ssr: Como instalar en Leptos SSR
 layout: Layout
 see_it_in_action: "Miralo en acción:"
 separators: Separadores
+states: Estados
 sizes: Tamaños
 tag: Etiqueta
 this_website_was_made_with: Este sitio web fue hecho con
