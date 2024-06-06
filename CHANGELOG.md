@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+## Added
+
+- Tag elements (`BTag` and `Btags`).
+
 ## [0.2.0] - 2024-05-13
 
 ### Added

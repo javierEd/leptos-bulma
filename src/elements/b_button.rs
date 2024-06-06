@@ -17,13 +17,8 @@ fn get_button_class_list(
 ) -> String {
     let mut class_list = "button".to_owned();
 
-    if color != BColor::Default {
-        class_list += &format!(" is-{}", String::from(color))
-    };
-
-    if size != BSize::Default {
-        class_list += &format!(" is-{}", String::from(size))
-    };
+    color.add_to_class_list(&mut class_list);
+    size.add_to_class_list(&mut class_list);
 
     if ![BState::Default, BState::Disabled].contains(&state) {
         class_list += &format!(" is-{}", String::from(state))

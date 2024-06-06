@@ -11,10 +11,24 @@ pub enum BColor {
     Warning,
 }
 
+impl BColor {
+    pub fn add_to_class_list(&self, class_list: &mut String) {
+        if self != &BColor::Default {
+            class_list.push_str(&format!(" is-{}", String::from(self)))
+        };
+    }
+}
+
 impl From<BColor> for String {
     fn from(value: BColor) -> Self {
+        String::from(&value)
+    }
+}
+
+impl From<&BColor> for String {
+    fn from(value: &BColor) -> Self {
         match value {
-            BColor::Custom(custom) => custom,
+            BColor::Custom(custom) => custom.clone(),
             BColor::Danger => "danger".to_owned(),
             BColor::Default => "default".to_owned(),
             BColor::Info => "info".to_owned(),
@@ -36,8 +50,22 @@ pub enum BSize {
     Small,
 }
 
+impl BSize {
+    pub fn add_to_class_list(&self, class_list: &mut String) {
+        if self != &BSize::Default {
+            class_list.push_str(&format!(" is-{}", String::from(self)))
+        };
+    }
+}
+
 impl From<BSize> for String {
     fn from(value: BSize) -> Self {
+        String::from(&value)
+    }
+}
+
+impl From<&BSize> for String {
+    fn from(value: &BSize) -> Self {
         match value {
             BSize::Default => "default",
             BSize::Large => "large",

@@ -84,7 +84,10 @@ pub fn Layout(children: Children) -> impl IntoView {
                         </BNavbarItem>
                         <BNavbarItem href="/guides#customization">{t!(i18n, customization)}</BNavbarItem>
                     </BNavbarItemDropdown>
-                    <BNavbarItem href="/elements">{t!(i18n, elements)}</BNavbarItem>
+                    <BNavbarItemDropdown is_hoverable=true href="/elements" trigger=move || t!(i18n, elements)>
+                        <BNavbarItem href="/elements#button">{t!(i18n, button)}</BNavbarItem>
+                        <BNavbarItem href="/elements/tag">{t!(i18n, tag)}</BNavbarItem>
+                    </BNavbarItemDropdown>
                     <BNavbarItem href="/components">{t!(i18n, components)}</BNavbarItem>
                     <BNavbarItem href="/form">{t!(i18n, form)}</BNavbarItem>
                     <BNavbarItem href="/columns">{t!(i18n, columns)}</BNavbarItem>

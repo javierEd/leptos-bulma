@@ -1,5 +1,10 @@
+addons: Complementos
 and_you_can_see_the_source_code_at: Y puedes ver el código fuente en
+basic: Básico
+button: Botón
 change_language: Cambiar idioma
+code_sample: "Muestra de código:"
+colors: Colores
 columns: Columnas
 components: Componentes
 customization: Customización
@@ -10,6 +15,9 @@ home: Inicio
 how_to_install_in_leptos_csr: Como instalar en Leptos CSR
 how_to_install_in_leptos_ssr: Como instalar en Leptos SSR
 layout: Layout
+see_it_in_action: "Miralo en acción:"
+sizes: Tamaños
+tag: Etiqueta
 this_website_was_made_with: Este sitio web fue hecho con
 to_find_more_information_you_can_go_to: Para encontrar más información, puedes ir a
 additionally_you_can_check_bulma_official_documentation: Adicionalmente, puedes consultar la documentación oficial de Bulma

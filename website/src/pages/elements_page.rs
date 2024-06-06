@@ -1,5 +1,5 @@
 use leptos::*;
-use leptos_bulma::elements::{BBlock, BTitle};
+use leptos_bulma::elements::{BAButton, BBlock, BTitle};
 use leptos_bulma::layout::BSection;
 
 use crate::components::{GoToBulmaIo, GoToDocsRs, PageTitle};
@@ -118,6 +118,14 @@ pub fn ElementsPage() -> impl IntoView {
             <BasicTable/>
 
             <GoToDocsRs path="elements/fn.BTable"/>
+        </BSection>
+
+        <BSection>
+            <BTitle is=4>{t!(i18n, tag)}</BTitle>
+
+            <BAButton is_fullwidth=true href="/elements/tag">
+                "Go to tag page"
+            </BAButton>
         </BSection>
 
         <BSection>

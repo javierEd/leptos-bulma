@@ -1,5 +1,6 @@
 use leptos::html::Code;
 use leptos::*;
+use leptos_bulma::elements::BBlock;
 use leptos_meta::Title;
 use wasm_bindgen::{prelude::wasm_bindgen, JsCast};
 use web_sys::HtmlElement;
@@ -46,12 +47,12 @@ pub fn GoToBulmaIo(path: &'static str) -> impl IntoView {
     let i18n = use_i18n();
 
     view! {
-        <section class="section">
+        <BBlock>
             {t!(i18n, additionally_you_can_check_bulma_official_documentation)} ": "
             <a href=format!("https://bulma.io/documentation/{path}") target="_blank">
                 {format!("bulma.io/documentation/{path}")}
             </a>
-        </section>
+        </BBlock>
     }
 }
 
@@ -61,11 +62,11 @@ pub fn GoToDocsRs(path: &'static str) -> impl IntoView {
     let version = env!("CARGO_PKG_VERSION");
 
     view! {
-        <p class="block">
+        <BBlock>
             {t!(i18n, to_find_more_information_you_can_go_to)} ": "
             <a href=format!("https://docs.rs/leptos-bulma/{version}/leptos_bulma/{path}.html") target="_blank">
                 {format!("docs.rs/leptos-bulma/{version}/leptos_bulma/{path}.html")}
             </a>
-        </p>
+        </BBlock>
     }
 }

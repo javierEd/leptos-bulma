@@ -16,11 +16,15 @@ mod basic_navbar;
 mod basic_pagination;
 mod basic_section;
 mod basic_table;
+mod basic_tags;
 mod basic_title;
 mod button_colors;
 mod button_sizes;
 mod button_states;
 mod general_form;
+mod tag_addons;
+mod tag_colors;
+mod tag_sizes;
 
 pub use basic_block::BasicBlock;
 pub use basic_box::BasicBox;
@@ -33,11 +37,15 @@ pub use basic_navbar::BasicNavbar;
 pub use basic_pagination::BasicPagination;
 pub use basic_section::BasicSection;
 pub use basic_table::BasicTable;
+pub use basic_tags::BasicTags;
 pub use basic_title::BasicTitle;
 pub use button_colors::ButtonColors;
 pub use button_sizes::ButtonSizes;
 pub use button_states::ButtonStates;
 pub use general_form::GeneralForm;
+pub use tag_addons::TagAddons;
+pub use tag_colors::TagColors;
+pub use tag_sizes::TagSizes;
 
 async fn get_code_example(name: &'static str) -> Result<String, JsValue> {
     let opts = RequestInit::new();

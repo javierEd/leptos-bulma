@@ -1,5 +1,10 @@
+addons: Addons
 and_you_can_see_the_source_code_at: And you can see the source code at
+basic: Basic
+button: Button
 change_language: Change language
+code_sample: "Code sample:"
+colors: Colors
 columns: Columns
 components: Components
 customization: Customization
@@ -10,6 +15,9 @@ home: Home
 how_to_install_in_leptos_csr: How to Install in Leptos CSR
 how_to_install_in_leptos_ssr: How to Install in Leptos SSR
 layout: Layout
+see_it_in_action: "See it in action:"
+sizes: Sizes
+tag: Tag
 this_website_was_made_with: This website was made with
 to_find_more_information_you_can_go_to: To find more information, you can go to
 additionally_you_can_check_bulma_official_documentation: Additionally, you can check Bulma official documentation

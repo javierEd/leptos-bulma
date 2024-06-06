@@ -2,11 +2,10 @@ use leptos::*;
 use leptos_bulma::elements::{BButton, BButtons};
 use leptos_bulma::enums::BColor;
 
-fn button_color_options() -> [BColor; 12] {
+fn button_color_options() -> [BColor; 11] {
     [
         BColor::Custom("black".to_owned()),
         BColor::Custom("ghost".to_owned()),
-        BColor::Custom("text".to_owned()),
         BColor::Custom("white".to_owned()),
         BColor::Danger,
         BColor::Default,
