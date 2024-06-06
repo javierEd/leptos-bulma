@@ -1,11 +1,11 @@
 # Changelog
 
-## [Unreleased]
+## [0.3.0] - 2024-06-06
 
 ### Added
 
 - Tag element (`BTag` and `Btags`).
-- Breadcrumb component (`BBreadcrumb` `BBreadcrumbItem`).
+- Breadcrumb component (`BBreadcrumb` and `BBreadcrumbItem`).
 
 ### Changed
 
