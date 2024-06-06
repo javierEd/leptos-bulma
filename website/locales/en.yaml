@@ -1,6 +1,8 @@
 addons: Addons
+alignment: Alignment
 and_you_can_see_the_source_code_at: And you can see the source code at
 basic: Basic
+breadcrumb: Breadcrumb
 button: Button
 change_language: Change language
 code_sample: "Code sample:"
@@ -16,6 +18,7 @@ how_to_install_in_leptos_csr: How to Install in Leptos CSR
 how_to_install_in_leptos_ssr: How to Install in Leptos SSR
 layout: Layout
 see_it_in_action: "See it in action:"
+separators: Separators
 sizes: Sizes
 tag: Tag
 this_website_was_made_with: This website was made with

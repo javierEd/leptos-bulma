@@ -7,6 +7,7 @@ mod home_page;
 mod layout_page;
 mod not_found_page;
 
+pub mod components;
 pub mod elements;
 
 pub use columns_page::ColumnsPage;

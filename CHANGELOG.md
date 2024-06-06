@@ -4,7 +4,8 @@
 
 ## Added
 
-- Tag elements (`BTag` and `Btags`).
+- Tag element (`BTag` and `Btags`).
+- Breadcrumb component (`BBreadcrumb` `BBreadcrumbItem`).
 
 ## [0.2.0] - 2024-05-13
 

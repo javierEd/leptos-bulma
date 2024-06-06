@@ -1,3 +1,21 @@
+#[derive(Clone, Copy, Eq, Hash, PartialEq)]
+pub enum BAlignment {
+    Centered,
+    Default,
+    Right,
+}
+
+impl From<BAlignment> for String {
+    fn from(value: BAlignment) -> Self {
+        match value {
+            BAlignment::Centered => "centered",
+            BAlignment::Default => "default",
+            BAlignment::Right => "right",
+        }
+        .to_owned()
+    }
+}
+
 #[derive(Clone, Eq, Hash, PartialEq)]
 pub enum BColor {
     Custom(String),
@@ -12,7 +30,7 @@ pub enum BColor {
 }
 
 impl BColor {
-    pub fn add_to_class_list(&self, class_list: &mut String) {
+    pub(crate) fn add_to_class_list(&self, class_list: &mut String) {
         if self != &BColor::Default {
             class_list.push_str(&format!(" is-{}", String::from(self)))
         };
@@ -51,7 +69,7 @@ pub enum BSize {
 }
 
 impl BSize {
-    pub fn add_to_class_list(&self, class_list: &mut String) {
+    pub(crate) fn add_to_class_list(&self, class_list: &mut String) {
         if self != &BSize::Default {
             class_list.push_str(&format!(" is-{}", String::from(self)))
         };
@@ -72,6 +90,28 @@ impl From<&BSize> for String {
             BSize::Medium => "medium",
             BSize::Normal => "normal",
             BSize::Small => "small",
+        }
+        .to_owned()
+    }
+}
+
+#[derive(Clone, Copy, Eq, Hash, PartialEq)]
+pub enum BBreadcrumbSeparator {
+    Arrow,
+    Bullet,
+    Default,
+    Dot,
+    Succeeds,
+}
+
+impl From<BBreadcrumbSeparator> for String {
+    fn from(value: BBreadcrumbSeparator) -> Self {
+        match value {
+            BBreadcrumbSeparator::Arrow => "arrow",
+            BBreadcrumbSeparator::Bullet => "bullet",
+            BBreadcrumbSeparator::Default => "default",
+            BBreadcrumbSeparator::Dot => "dot",
+            BBreadcrumbSeparator::Succeeds => "ducceeds",
         }
         .to_owned()
     }

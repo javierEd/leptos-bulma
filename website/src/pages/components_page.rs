@@ -1,4 +1,6 @@
 use leptos::*;
+use leptos_bulma::elements::{BAButton, BTitle};
+use leptos_bulma::layout::BSection;
 
 use crate::components::{GoToBulmaIo, GoToDocsRs, PageTitle};
 use crate::examples::{BasicDropdown, BasicModal, BasicNavbar, BasicPagination, RustCodeExample};
@@ -12,6 +14,14 @@ pub fn ComponentsPage() -> impl IntoView {
         <PageTitle text=t!(i18n, components)/>
 
         <h2 class="title is-3">{t!(i18n, components)}</h2>
+
+        <BSection>
+            <BTitle is=4>{t!(i18n, breadcrumb)}</BTitle>
+
+            <BAButton is_fullwidth=true href="/components/breadcrumb">
+                "Go to breadcrumb page"
+            </BAButton>
+        </BSection>
 
         <section class="section">
             <h3 class="title is-4">"Dropdown"</h3>
