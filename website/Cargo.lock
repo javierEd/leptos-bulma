@@ -970,7 +970,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-bulma"
-version = "0.3.0"
+version = "0.4.0"
 dependencies = [
  "icondata_ai",
  "icondata_bi",
@@ -2394,7 +2394,7 @@ dependencies = [
 
 [[package]]
 name = "website"
-version = "0.3.0"
+version = "0.4.0"
 dependencies = [
  "console_error_panic_hook",
  "http 1.1.0",

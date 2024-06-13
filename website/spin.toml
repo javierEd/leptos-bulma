@@ -2,7 +2,7 @@ spin_manifest_version = 2
 
 [application]
 name = "leptos-bulma-website"
-version = "0.3.0"
+version = "0.4.0"
 authors = ["Javier E. <jaedns@gmail.com>"]
 description = "Official website for Leptos Bulma."
 
