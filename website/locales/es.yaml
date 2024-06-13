@@ -16,7 +16,9 @@ guides: Guias
 home: Inicio
 how_to_install_in_leptos_csr: Como instalar en Leptos CSR
 how_to_install_in_leptos_ssr: Como instalar en Leptos SSR
+icon: Icono
 layout: Layout
+packages: Packages
 see_it_in_action: "Miralo en acción:"
 separators: Separadores
 states: Estados

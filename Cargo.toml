@@ -21,7 +21,24 @@ publish = true
 
 [dependencies]
 icondata_core = { version = "0.1", optional = true }
+icondata_ai = { version = "0.0", optional = true }
+icondata_bi = { version = "0.0", optional = true }
+icondata_bs = { version = "0.0", optional = true }
+icondata_cg = { version = "0.0", optional = true }
+icondata_ch = { version = "0.0", optional = true }
 icondata_fa = { version = "0.0", optional = true }
+icondata_fi = { version = "0.0", optional = true }
+icondata_hi = { version = "0.0", optional = true }
+icondata_im = { version = "0.0", optional = true }
+icondata_io = { version = "0.0", optional = true }
+icondata_lu = { version = "0.0", optional = true }
+icondata_oc = { version = "0.0", optional = true }
+icondata_ri = { version = "0.0", optional = true }
+icondata_si = { version = "0.0", optional = true }
+icondata_tb = { version = "0.0", optional = true }
+icondata_ti = { version = "0.0", optional = true }
+icondata_vs = { version = "0.0", optional = true }
+icondata_wi = { version = "0.0", optional = true }
 leptos = "0.6"
 leptos_icons = { version = "0.3", optional = true }
 leptos_router = "0.6"
@@ -29,10 +46,27 @@ leptos-use = "0.10"
 web-sys = "0.3"
 
 [features]
-default = ["icondata-fa"]
+default = []
 build-script = []
 leptos-icons = ["dep:icondata_core", "dep:leptos_icons"]
+icondata-ai = ["leptos-icons", "dep:icondata_ai"]
+icondata-bi = ["leptos-icons", "dep:icondata_bi"]
+icondata-bs = ["leptos-icons", "dep:icondata_bs"]
+icondata-cg = ["leptos-icons", "dep:icondata_cg"]
+icondata-ch = ["leptos-icons", "dep:icondata_ch"]
 icondata-fa = ["leptos-icons", "dep:icondata_fa"]
+icondata-fi = ["leptos-icons", "dep:icondata_fi"]
+icondata-hi = ["leptos-icons", "dep:icondata_hi"]
+icondata-im = ["leptos-icons", "dep:icondata_im"]
+icondata-io = ["leptos-icons", "dep:icondata_io"]
+icondata-lu = ["leptos-icons", "dep:icondata_lu"]
+icondata-oc = ["leptos-icons", "dep:icondata_oc"]
+icondata-ri = ["leptos-icons", "dep:icondata_ri"]
+icondata-si = ["leptos-icons", "dep:icondata_si"]
+icondata-tb = ["leptos-icons", "dep:icondata_tb"]
+icondata-ti = ["leptos-icons", "dep:icondata_ti"]
+icondata-vs = ["leptos-icons", "dep:icondata_vs"]
+icondata-wi = ["leptos-icons", "dep:icondata_wi"]
 ssr = ["leptos-use/ssr"]
 
 [profile.release]

@@ -50,9 +50,10 @@ pub fn BNavbarItem(
     #[prop(optional, into)] class: TextProp,
     #[prop(optional, into)] href: Option<TextProp>,
     #[prop(optional, into)] target: Option<TextProp>,
+    #[prop(optional, into)] title: Option<TextProp>,
 ) -> impl IntoView {
     view! {
-        <a class=format!("navbar-item {}", class.get()) href=href target=target>
+        <a class=format!("navbar-item {}", class.get()) href=href target=target title=title>
             {children()}
         </a>
     }

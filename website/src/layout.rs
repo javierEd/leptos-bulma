@@ -6,7 +6,7 @@ use leptos_bulma::components::{
     BNavbarItemDropdown, BNavbarMenu, BNavbarStart,
 };
 use leptos_bulma::elements::{BButton, BButtons, BIcon};
-use leptos_bulma::enums::BState;
+use leptos_bulma::enums::{BSize, BState};
 use leptos_bulma::icons::icondata_fa;
 use leptos_use::ColorMode;
 
@@ -86,6 +86,7 @@ pub fn Layout(children: Children) -> impl IntoView {
                     </BNavbarItemDropdown>
                     <BNavbarItemDropdown is_hoverable=true href="/elements" trigger=move || t!(i18n, elements)>
                         <BNavbarItem href="/elements/button">{t!(i18n, button)}</BNavbarItem>
+                        <BNavbarItem href="/elements/icon">{t!(i18n, icon)}</BNavbarItem>
                         <BNavbarItem href="/elements/tag">{t!(i18n, tag)}</BNavbarItem>
                     </BNavbarItemDropdown>
                     <BNavbarItemDropdown is_hoverable=true href="/components" trigger=move || t!(i18n, components)>
@@ -97,14 +98,9 @@ pub fn Layout(children: Children) -> impl IntoView {
                 </BNavbarStart>
 
                 <BNavbarEnd>
-                    <a
-                        class="navbar-item"
-                        href="https://github.com/javierEd/leptos-bulma"
-                        target="_blank"
-                        title="GitHub"
-                    >
-                        <BIcon is_large=true icon=icondata_fa::FaGithubBrands/>
-                    </a>
+                    <BNavbarItem href="https://github.com/javierEd/leptos-bulma" target="_blank" title="GitHub">
+                        <BIcon icon=icondata_fa::FaGithubBrands size=BSize::Large is_scaled=true/>
+                    </BNavbarItem>
                 </BNavbarEnd>
             </BNavbarMenu>
         </BNavbar>

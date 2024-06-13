@@ -9,8 +9,59 @@ pub mod layout;
 
 #[cfg(feature = "leptos-icons")]
 pub mod icons {
+    #[cfg(feature = "icondata-ai")]
+    pub use icondata_ai;
+
+    #[cfg(feature = "icondata-bi")]
+    pub use icondata_bi;
+
+    #[cfg(feature = "icondata-bs")]
+    pub use icondata_bs;
+
+    #[cfg(feature = "icondata-cg")]
+    pub use icondata_cg;
+
+    #[cfg(feature = "icondata-ch")]
+    pub use icondata_ch;
+
     #[cfg(feature = "icondata-fa")]
     pub use icondata_fa;
+
+    #[cfg(feature = "icondata-fi")]
+    pub use icondata_fi;
+
+    #[cfg(feature = "icondata-hi")]
+    pub use icondata_hi;
+
+    #[cfg(feature = "icondata-im")]
+    pub use icondata_im;
+
+    #[cfg(feature = "icondata-io")]
+    pub use icondata_io;
+
+    #[cfg(feature = "icondata-lu")]
+    pub use icondata_lu;
+
+    #[cfg(feature = "icondata-oc")]
+    pub use icondata_oc;
+
+    #[cfg(feature = "icondata-ri")]
+    pub use icondata_ri;
+
+    #[cfg(feature = "icondata-si")]
+    pub use icondata_si;
+
+    #[cfg(feature = "icondata-tb")]
+    pub use icondata_tb;
+
+    #[cfg(feature = "icondata-ti")]
+    pub use icondata_ti;
+
+    #[cfg(feature = "icondata-vs")]
+    pub use icondata_vs;
+
+    #[cfg(feature = "icondata-wi")]
+    pub use icondata_wi;
 }
 
 pub struct EventFn(Box<dyn Fn(Event) + 'static>);

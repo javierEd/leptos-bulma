@@ -23,7 +23,26 @@ console_error_panic_hook = "0.1.7"
 http = "1.1.0"
 icondata_core = "0.1.0"
 leptos = "0.6.11"
-leptos-bulma = { path = "../" }
+leptos-bulma = { path = "../", features = [
+    "icondata-ai",
+    "icondata-bi",
+    "icondata-bs",
+    "icondata-cg",
+    "icondata-ch",
+    "icondata-fa",
+    "icondata-fi",
+    "icondata-hi",
+    "icondata-im",
+    "icondata-io",
+    "icondata-lu",
+    "icondata-oc",
+    "icondata-ri",
+    "icondata-si",
+    "icondata-tb",
+    "icondata-ti",
+    "icondata-vs",
+    "icondata-wi",
+] }
 leptos_i18n = { version = "0.3.3", default-features = false, features = [
     "cookie",
     "yaml_files",

@@ -16,7 +16,9 @@ guides: Guides
 home: Home
 how_to_install_in_leptos_csr: How to Install in Leptos CSR
 how_to_install_in_leptos_ssr: How to Install in Leptos SSR
+icon: Icon
 layout: Layout
+packages: Packages
 see_it_in_action: "See it in action:"
 separators: Separators
 sizes: Sizes

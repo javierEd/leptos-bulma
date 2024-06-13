@@ -1,5 +1,16 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+- More icon packages from `icondata`.
+- Move icon element to their own page on the website.
+
+### Changed
+
+- Use prop with enum `BSize` on `BIcon` and `BIconText`.
+
 ## [0.3.0] - 2024-06-06
 
 ### Added
