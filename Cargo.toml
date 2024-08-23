@@ -42,7 +42,7 @@ icondata_wi = { version = "0.0", optional = true }
 leptos = "0.6"
 leptos_icons = { version = "0.3", optional = true }
 leptos_router = "0.6"
-leptos-use = "0.10"
+leptos-use = "0.12"
 web-sys = "0.3"
 
 [features]

@@ -1,5 +1,12 @@
 # Changelog
 
+## [Unreleased]
+
+### Changed
+
+- Upgrade `leptos-use` to v0.12.
+- Upgrade website dependencies.
+
 ## [0.4.0] - 2024-06-13
 
 ### Added

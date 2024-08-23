@@ -1,8 +1,8 @@
+use codee::string::FromToStringCodec;
 use leptos::*;
 use leptos_i18n::Locale;
 use leptos_meta::*;
 use leptos_router::*;
-use leptos_use::utils::FromToStringCodec;
 use leptos_use::{
     use_color_mode_with_options, use_cookie, UseColorModeOptions, UseColorModeReturn,
 };
@@ -36,13 +36,13 @@ pub fn App() -> impl IntoView {
     );
 
     view! {
-        <Stylesheet id="leptos" href="/pkg/website.css"/>
+        <Stylesheet id="leptos" href="/pkg/website.css" />
 
         // sets the favicon
-        <Link rel="icon" href="/images/favicon.png"/>
+        <Link rel="icon" href="/images/favicon.png" />
 
         // sets the document title
-        <Title text="Leptos Bulma - A Leptos component library based on Bulma CSS framework"/>
+        <Title text="Leptos Bulma - A Leptos component library based on Bulma CSS framework" />
 
         <div class="loading-overlay" class:is-done=leptos_dom::is_browser></div>
 
@@ -50,18 +50,18 @@ pub fn App() -> impl IntoView {
         <Router trailing_slash=TrailingSlash::Redirect>
             <Layout>
                 <Routes>
-                    <Route path="/columns" view=ColumnsPage/>
-                    <Route path="/components" view=ComponentsPage/>
-                    <Route path="/components/breadcrumb" view=components::BreadcrumbPage/>
-                    <Route path="/elements" view=ElementsPage/>
-                    <Route path="/elements/button" view=elements::ButtonPage/>
-                    <Route path="/elements/icon" view=elements::IconPage/>
-                    <Route path="/elements/tag" view=elements::TagPage/>
-                    <Route path="/form" view=FormPage/>
-                    <Route path="/guides" view=GuidesPage/>
-                    <Route path="/layout" view=LayoutPage/>
-                    <Route path="/" view=HomePage/>
-                    <Route path="/*" view=NotFoundPage/>
+                    <Route path="/columns" view=ColumnsPage />
+                    <Route path="/components" view=ComponentsPage />
+                    <Route path="/components/breadcrumb" view=components::BreadcrumbPage />
+                    <Route path="/elements" view=ElementsPage />
+                    <Route path="/elements/button" view=elements::ButtonPage />
+                    <Route path="/elements/icon" view=elements::IconPage />
+                    <Route path="/elements/tag" view=elements::TagPage />
+                    <Route path="/form" view=FormPage />
+                    <Route path="/guides" view=GuidesPage />
+                    <Route path="/layout" view=LayoutPage />
+                    <Route path="/" view=HomePage />
+                    <Route path="/*" view=NotFoundPage />
                 </Routes>
             </Layout>
         </Router>
