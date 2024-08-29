@@ -17,8 +17,10 @@ home: Home
 how_to_install_in_leptos_csr: How to Install in Leptos CSR
 how_to_install_in_leptos_ssr: How to Install in Leptos SSR
 icon: Icon
+indeterminate: Indeterminate
 layout: Layout
 packages: Packages
+progress: Progress bar
 see_it_in_action: "See it in action:"
 separators: Separators
 sizes: Sizes

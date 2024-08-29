@@ -11,7 +11,7 @@ pub fn ElementsPage() -> impl IntoView {
     let i18n = use_i18n();
 
     view! {
-        <PageTitle text=t!(i18n, elements)/>
+        <PageTitle text=t!(i18n, elements) />
 
         <BTitle is=3>{t!(i18n, elements)}</BTitle>
 
@@ -20,13 +20,13 @@ pub fn ElementsPage() -> impl IntoView {
 
             <BBlock>"Example:"</BBlock>
 
-            <RustCodeExample name="basic_block"/>
+            <RustCodeExample name="basic_block" />
 
             <BBlock>"See it in action:"</BBlock>
 
-            <BasicBlock/>
+            <BasicBlock />
 
-            <GoToDocsRs path="elements/fn.BBlock"/>
+            <GoToDocsRs path="elements/fn.BBlock" />
         </BSection>
 
         <BSection>
@@ -34,13 +34,13 @@ pub fn ElementsPage() -> impl IntoView {
 
             <BBlock>"Example:"</BBlock>
 
-            <RustCodeExample name="basic_box"/>
+            <RustCodeExample name="basic_box" />
 
             <BBlock>"See it in action:"</BBlock>
 
-            <BasicBox/>
+            <BasicBox />
 
-            <GoToDocsRs path="elements/fn.BBox"/>
+            <GoToDocsRs path="elements/fn.BBox" />
         </BSection>
 
         <BSection>
@@ -60,17 +60,25 @@ pub fn ElementsPage() -> impl IntoView {
         </BSection>
 
         <BSection>
+            <BTitle is=4>{t!(i18n, progress)}</BTitle>
+
+            <BAButton is_fullwidth=true href="/elements/progress">
+                "Go to progress page"
+            </BAButton>
+        </BSection>
+
+        <BSection>
             <BTitle is=4>"Table"</BTitle>
 
             <BBlock>"Example:"</BBlock>
 
-            <RustCodeExample name="basic_table"/>
+            <RustCodeExample name="basic_table" />
 
             <BBlock>"See it in action:"</BBlock>
 
-            <BasicTable/>
+            <BasicTable />
 
-            <GoToDocsRs path="elements/fn.BTable"/>
+            <GoToDocsRs path="elements/fn.BTable" />
         </BSection>
 
         <BSection>
@@ -86,15 +94,15 @@ pub fn ElementsPage() -> impl IntoView {
 
             <BBlock>"Example:"</BBlock>
 
-            <RustCodeExample name="basic_title"/>
+            <RustCodeExample name="basic_title" />
 
             <BBlock>"See it in action:"</BBlock>
 
-            <BasicTitle/>
+            <BasicTitle />
 
-            <GoToDocsRs path="elements/fn.BTitle"/>
+            <GoToDocsRs path="elements/fn.BTitle" />
         </BSection>
 
-        <GoToBulmaIo path="elements"/>
+        <GoToBulmaIo path="elements" />
     }
 }

@@ -33,11 +33,11 @@ fn ImageColorModes(
     view! {
         <picture>
             <Show when=move || [ColorMode::Dark, ColorMode::Auto].contains(&color_mode.get())>
-                <source srcset=dark_src media="(prefers-color-scheme: dark)"/>
+                <source srcset=dark_src media="(prefers-color-scheme: dark)" />
             </Show>
 
             <Show when=move || [ColorMode::Light, ColorMode::Auto].contains(&color_mode.get())>
-                <source srcset=light_src media="(prefers-color-scheme: light)"/>
+                <source srcset=light_src media="(prefers-color-scheme: light)" />
             </Show>
 
             <img
@@ -61,7 +61,7 @@ pub fn Layout(children: Children) -> impl IntoView {
                 <BNavbarItem class="media mb-0 is-align-items-center" href="/">
                     <div class="media-left">
                         <figure class="image is-48x48">
-                            <img class="is-rounded" src="/images/favicon.png"/>
+                            <img class="is-rounded" src="/images/favicon.png" />
                         </figure>
                     </div>
                     <div class="media-content">
@@ -69,7 +69,7 @@ pub fn Layout(children: Children) -> impl IntoView {
                     </div>
                 </BNavbarItem>
 
-                <BNavbarBurger is_active=burger_is_active/>
+                <BNavbarBurger is_active=burger_is_active />
             </BNavbarBrand>
 
             <BNavbarMenu is_active=burger_is_active>
@@ -87,6 +87,7 @@ pub fn Layout(children: Children) -> impl IntoView {
                     <BNavbarItemDropdown is_hoverable=true href="/elements" trigger=move || t!(i18n, elements)>
                         <BNavbarItem href="/elements/button">{t!(i18n, button)}</BNavbarItem>
                         <BNavbarItem href="/elements/icon">{t!(i18n, icon)}</BNavbarItem>
+                        <BNavbarItem href="/elements/progress">{t!(i18n, progress)}</BNavbarItem>
                         <BNavbarItem href="/elements/tag">{t!(i18n, tag)}</BNavbarItem>
                     </BNavbarItemDropdown>
                     <BNavbarItemDropdown is_hoverable=true href="/components" trigger=move || t!(i18n, components)>
@@ -99,7 +100,7 @@ pub fn Layout(children: Children) -> impl IntoView {
 
                 <BNavbarEnd>
                     <BNavbarItem href="https://github.com/javierEd/leptos-bulma" target="_blank" title="GitHub">
-                        <BIcon icon=icondata_fa::FaGithubBrands size=BSize::Large is_scaled=true/>
+                        <BIcon icon=icondata_fa::FaGithubBrands size=BSize::Large is_scaled=true />
                     </BNavbarItem>
                 </BNavbarEnd>
             </BNavbarMenu>
@@ -122,7 +123,7 @@ pub fn Layout(children: Children) -> impl IntoView {
                                     alt="Leptos"
                                     width=100
                                 />
-                            </a> & <a class="mx-3" href="https://bulma.io/" target="_blank" title="Go to Bulma">
+                            </a>& <a class="mx-3" href="https://bulma.io/" target="_blank" title="Go to Bulma">
                                 <ImageColorModes
                                     dark_src="/images/bulma-logo-light.svg"
                                     light_src="/images/bulma-logo.svg"
@@ -183,7 +184,7 @@ pub fn Layout(children: Children) -> impl IntoView {
                                             on:click=move |_| app_color_mode.set_mode.set(mode.clone())
                                             state=button_state
                                         >
-                                            <BIcon is_scaled=false icon=icon/>
+                                            <BIcon is_scaled=false icon=icon />
                                         </BButton>
                                     }
                                 }
