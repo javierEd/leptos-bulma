@@ -56,6 +56,7 @@ pub fn App() -> impl IntoView {
                     <Route path="/elements" view=ElementsPage />
                     <Route path="/elements/button" view=elements::ButtonPage />
                     <Route path="/elements/icon" view=elements::IconPage />
+                    <Route path="/elements/notification" view=elements::NotificationPage />
                     <Route path="/elements/progress" view=elements::ProgressPage />
                     <Route path="/elements/tag" view=elements::TagPage />
                     <Route path="/form" view=FormPage />

@@ -19,6 +19,8 @@ how_to_install_in_leptos_ssr: Como instalar en Leptos SSR
 icon: Icono
 indeterminate: Indeterminado
 layout: Layout
+light_colors: Colores claros
+notification: Notificación
 packages: Paquetes
 progress: Barra de progreso
 see_it_in_action: "Miralo en acción:"

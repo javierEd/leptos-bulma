@@ -65,6 +65,7 @@ pub fn ProgressPage() -> impl IntoView {
 
             <ProgressIndeterminate />
         </BSection>
+
         <GoToDocsRs path="elements/fn.BProgress" />
 
         <GoToBulmaIo path="elements/progress" />

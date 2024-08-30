@@ -5,6 +5,8 @@
 ### Added
 
 - Progress bar element (`BProgress`).
+- More props to `BNotification`.
+- Notification element page on the website.
 
 ## [0.5.0] - 2024-08-23
 

@@ -60,6 +60,14 @@ pub fn ElementsPage() -> impl IntoView {
         </BSection>
 
         <BSection>
+            <BTitle is=4>{t!(i18n, notification)}</BTitle>
+
+            <BAButton is_fullwidth=true href="/elements/notification">
+                "Go to notification page"
+            </BAButton>
+        </BSection>
+
+        <BSection>
             <BTitle is=4>{t!(i18n, progress)}</BTitle>
 
             <BAButton is_fullwidth=true href="/elements/progress">
