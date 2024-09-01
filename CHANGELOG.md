@@ -8,6 +8,11 @@
 - More props to `BNotification`.
 - Notification element page on the website.
 
+## Changed
+
+- Upgrade `leptos-use` to v0.13.
+- Upgrade website dependencies.
+
 ## [0.5.0] - 2024-08-23
 
 ### Changed

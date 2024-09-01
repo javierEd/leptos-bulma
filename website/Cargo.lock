@@ -1012,7 +1012,7 @@ dependencies = [
  "icondata_vs",
  "icondata_wi",
  "leptos",
- "leptos-use",
+ "leptos-use 0.13.0",
  "leptos_icons",
  "leptos_router",
  "web-sys",
@@ -1078,6 +1078,24 @@ dependencies = [
  "paste",
  "thiserror",
  "unic-langid",
+ "wasm-bindgen",
+ "wasm-bindgen-futures",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-use"
+version = "0.13.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2fbd7025172d634eed266a57bd45c7bf872562e97e5768c543d69b6e907c4b86"
+dependencies = [
+ "cfg-if",
+ "default-struct-builder",
+ "js-sys",
+ "lazy_static",
+ "leptos",
+ "paste",
+ "thiserror",
  "wasm-bindgen",
  "wasm-bindgen-futures",
  "web-sys",
@@ -1741,9 +1759,9 @@ dependencies = [
 
 [[package]]
 name = "serde"
-version = "1.0.208"
+version = "1.0.209"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cff085d2cb684faa248efb494c39b68e522822ac0de72ccf08109abde717cfb2"
+checksum = "99fce0ffe7310761ca6bf9faf5115afbc19688edd00171d81b1bb1b116c63e09"
 dependencies = [
  "serde_derive",
 ]
@@ -1761,9 +1779,9 @@ dependencies = [
 
 [[package]]
 name = "serde_derive"
-version = "1.0.208"
+version = "1.0.209"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "24008e81ff7613ed8e5ba0cfaf24e2c2f1e5b8a0495711e44fcd4882fca62bcf"
+checksum = "a5831b979fd7b5439637af1752d535ff49f4860c0f341d1baeb6faf0f4242170"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -2453,7 +2471,7 @@ dependencies = [
  "leptos",
  "leptos-bulma",
  "leptos-spin",
- "leptos-use",
+ "leptos-use 0.12.0",
  "leptos_i18n",
  "leptos_integration_utils",
  "leptos_meta",
